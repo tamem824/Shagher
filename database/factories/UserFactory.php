@@ -19,10 +19,20 @@ class UserFactory extends Factory
             'gender' => fake()->randomElement([Gender::Male, Gender::Female]),
             'phone_number' => fake()->numerify('07########'),
             'photo' => fake()->imageUrl(300, 300, 'people'),
+            'user_type'=>0,
             'address' => fake()->address(),
             'email_verified_at' => now(),
             'password' => bcrypt('password'),
             'remember_token' => Str::random(10),
         ];
     }
+    public function unverified()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'email_verified_at' => null,
+            ];
+        });
+    }
+
 }

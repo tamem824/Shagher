@@ -20,7 +20,7 @@
 1.Theme default CSS
 --------------------------*/
 /* ....................................
-1.1 Common CSS
+1.1 Common CSS 
 .......................................*/
 /*1.Theme default CSS
 --------------------------*/
@@ -32,12 +32,20 @@ html {
   line-height: 25px;
   width: 100%;
   height: 100%;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 a {
   color: #333;
   text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -50,6 +58,10 @@ a:focus {
   text-decoration: none;
   outline: none;
   color: #0060aa;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -80,6 +92,10 @@ h4 a,
 h5 a,
 h6 a {
   color: #222222;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -119,6 +135,10 @@ h3 a:hover,
 h4 a:hover,
 h5 a:hover,
 h6 a {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -251,6 +271,10 @@ a.button-btn span, button.button-btn span {
   top: 50%;
   transform: translateY(-50%);
   color: #e12454;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -274,6 +298,10 @@ a.button-btn span, button.button-btn span {
   overflow: scroll;
   overflow-x: hidden;
   z-index: 99999;
+  -webkit-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -ms-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 #sidebar .sidebar_logo {
@@ -424,6 +452,10 @@ a.button-btn span, button.button-btn span {
   left: 0;
   background-color: #00b3ff;
   transform: translateY(-100%);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   z-index: -1;
 }
@@ -436,6 +468,10 @@ a.button-btn span, button.button-btn span {
   left: 0;
   background-color: #00b3ff;
   transform: translateY(100%);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   z-index: -1;
 }
@@ -512,19 +548,24 @@ iframe {
   right: -30px;
   bottom: -65px;
   z-index: -1;
+  -webkit-animation: waves 3s ease-in-out infinite;
   animation: waves 3s ease-in-out infinite;
 }
 .wrapper .wave-1 {
+  -webkit-animation-delay: 0s;
   animation-delay: 0s;
 }
 .wrapper .wave-2 {
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 .wrapper .wave-3 {
+  -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }
 @keyframes waves {
   0% {
+    -webkit-transform: scale(0.2, 0.2);
     transform: scale(0.2, 0.2);
     opacity: 0;
   }
@@ -532,15 +573,20 @@ iframe {
     opacity: 0.9;
   }
   100% {
+    -webkit-transform: scale(0.9, 0.9);
     transform: scale(0.9, 0.9);
     opacity: 0;
   }
 }
 
 .animate-top-y {
+  -webkit-animation-name: top-y;
   animation-name: top-y;
+  -webkit-animation-duration: 2.5s;
   animation-duration: 2.5s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
 }
 
@@ -634,7 +680,7 @@ iframe {
 }
 
 /* ....................................
-1.1 Header CSS
+1.1 Header CSS 
 .......................................*/
 /*--------
 header css
@@ -652,8 +698,11 @@ header css
   height: 100%;
   background: #fff;
   z-index: 99999;
+  -webkit-box-shadow: 0 -12px 46px 12px rgba(182, 14, 14, 0.0509803922);
   box-shadow: 0 -12px 46px 12px rgba(182, 14, 14, 0.0509803922);
+  -webkit-transform: translate3d(20px, 0, 0);
   transform: translate3d(20px, 0, 0);
+  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
@@ -679,6 +728,7 @@ header css
   width: 100%;
   height: 1px;
   background-color: #fff;
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .main-header-wrapper1 .right-sidebar .sidebar-close:after {
@@ -689,6 +739,7 @@ header css
   width: 100%;
   height: 1px;
   background-color: #fff;
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .main-header-wrapper1 .right-sidebar .toggle-top-header {
@@ -811,6 +862,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .main-header-wrapper1 .right-sidebar .tog-social ul li a:hover {
@@ -826,6 +880,9 @@ header css
 .main-header-wrapper1 .right-sidebar .tog-social ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .main-header-wrapper1 .right-sidebar .tog-social ul li + li {
@@ -851,6 +908,7 @@ header css
 .main-header-wrapper1 .open {
   opacity: 1;
   visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 .main-header-wrapper1 .sb-main-header1 .menu-item-wrapper3 {
@@ -896,6 +954,10 @@ header css
 .main-header-wrapper1 .sb-main-header1 .menu-item-wrapper3 nav ul li .dropdown-items li {
   padding: 3px 8px;
   position: relative;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .main-header-wrapper1 .sb-main-header1 .menu-item-wrapper3 nav ul li .dropdown-items li a {
@@ -992,6 +1054,8 @@ header css
   display: inline-block;
   border-top: 4px solid #111;
   border-radius: 0px;
+  -webkit-box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.5);
   -ms-box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 8px -5px rgba(0, 0, 0, 0.5);
@@ -1021,12 +1085,20 @@ header css
   padding: 0px;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .main-header-wrapper1 .sb-main-header1 .menu-item-wrapper3 .social-media-icons li .search_bar .lv_search_box button:hover {
   color: #fff;
   background: #cca334;
   border-color: #cca334;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .main-header-wrapper1 .sb-main-header1 .menu-item-wrapper3 .social-media-icons li .sidebar-toggle span svg {
@@ -1066,6 +1138,9 @@ header css
   transform-origin: top left;
   background: #0060aa;
   border: 1px solid #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .main-header-wrapper1 .sb-main-header1 .menu-item-wrapper3 .social-media-icons .post-drop .post-btn:hover {
@@ -1079,6 +1154,9 @@ header css
 .main-header-wrapper1 .sb-main-header1 .menu-item-wrapper3 .social-media-icons .post-drop .post-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .main-header-wrapper1 .sb-main-header1 .menu-item-wrapper3 .social-media-icons .post-drop .post-page-wrapper {
@@ -1276,6 +1354,8 @@ header css
   display: inline-block;
   border-top: 4px solid #111;
   border-radius: 0px;
+  -webkit-box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.5);
   -ms-box-shadow: 0px 2px 7px -3px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 5px 8px -5px rgba(0, 0, 0, 0.5);
@@ -1305,12 +1385,20 @@ header css
   padding: 0px;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .main-header-wrapper1 .sb-main-header1 .mobile-menu-wrapper .social-media-icons ul .search_bar .lv_search_box button:hover {
   color: #fff;
   background: #cca334;
   border-color: #cca334;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .main-header-wrapper1 .sb-main-header1 .mobile-menu-wrapper .social-media-icons ul li {
@@ -1329,6 +1417,8 @@ header css
   background-color: #fff;
   display: block;
   margin: 6px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1379,7 +1469,7 @@ header css
 }
 
 /* ....................................
-1.1 Inner CSS
+1.1 Inner CSS 
 .......................................*/
 .inner-main-header {
   background-color: #fff;
@@ -1537,6 +1627,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .contact-main-wrapper .contact-box .contact-icon a:hover span {
@@ -1547,6 +1640,9 @@ header css
 .inner-page-main-wrapper .contact-main-wrapper .contact-box .contact-icon a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .contact-main-wrapper .contact-box h4 {
@@ -1602,6 +1698,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #f2f5fc;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .locate-main-wrapper .leave-form form .custom-btn:hover {
@@ -1616,6 +1715,9 @@ header css
 .inner-page-main-wrapper .locate-main-wrapper .leave-form form .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .locate-main-wrapper iframe {
@@ -1789,6 +1891,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .post-project-main-wrapper .post-form-wrapper .custom-btn:hover {
@@ -1803,6 +1908,9 @@ header css
 .inner-page-main-wrapper .post-project-main-wrapper .post-form-wrapper .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .post-project-main-wrapper .pripoli_text h4 {
@@ -1831,6 +1939,10 @@ header css
   bottom: 50%;
   right: 50%;
   opacity: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .inner-page-main-wrapper .blog-main-wrapper .blog-box .img-icon img {
@@ -2225,6 +2337,10 @@ header css
   background: #fff;
   border: 1px solid #797979;
   display: inline-block;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -2245,6 +2361,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .comment-main-wrapper .commemt-text ul li a:hover {
@@ -2260,6 +2379,9 @@ header css
 .inner-page-main-wrapper .comment-main-wrapper .commemt-text ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .comment-main-wrapper .commemt-text ul li + li {
@@ -2355,6 +2477,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .comment-form-main-wrapper .comment-post-form form .custom-btn:hover {
@@ -2368,6 +2493,9 @@ header css
 .inner-page-main-wrapper .comment-form-main-wrapper .comment-post-form form .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .sidebar_text {
@@ -2405,6 +2533,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #f2f5fc;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .sidebar_text .custom-btn:hover {
@@ -2418,6 +2549,9 @@ header css
 .inner-page-main-wrapper .sidebar_text .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .flowtech-sidebar {
@@ -2514,6 +2648,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .flowtech-sidebar .bottom-details .custom-btn:hover {
@@ -2527,6 +2664,9 @@ header css
 .inner-page-main-wrapper .flowtech-sidebar .bottom-details .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .flowtech-sidebar .cdi-box {
@@ -2588,6 +2728,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .flowtech-sidebar .form-box .custom-btn:hover {
@@ -2602,6 +2745,9 @@ header css
 .inner-page-main-wrapper .flowtech-sidebar .form-box .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .side-bar-social {
@@ -2644,6 +2790,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .side-bar-social ul li a:hover {
@@ -2659,6 +2808,9 @@ header css
 .inner-page-main-wrapper .side-bar-social ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .side-bar-social ul li + li {
@@ -2693,6 +2845,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background-color: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .custom-pegination ul li a:hover {
@@ -2706,6 +2861,9 @@ header css
 .inner-page-main-wrapper .custom-pegination ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .custom-pegination ul li + li {
@@ -2734,6 +2892,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .custom-pegination ul .preious a:hover {
@@ -2747,6 +2908,9 @@ header css
 .inner-page-main-wrapper .custom-pegination ul .preious a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .custom-pegination ul .active a {
@@ -2966,6 +3130,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background-color: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .freelauncer-profile .skill .apply-btn:hover {
@@ -2979,6 +3146,9 @@ header css
 .inner-page-main-wrapper .freelauncer-profile .skill .apply-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .ewr_search_infobox {
@@ -3096,6 +3266,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .ewr_search_infobox .ewr_search_proj_list .ewr_search_proj_info .ewr_btn_yellow:hover {
@@ -3109,6 +3282,9 @@ header css
 .inner-page-main-wrapper .ewr_search_infobox .ewr_search_proj_list .ewr_search_proj_info .ewr_btn_yellow:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .ewr_search_infobox .ewr_search_proj_list .list-column ul li {
@@ -3198,6 +3374,10 @@ header css
   bottom: 50%;
   right: 50%;
   opacity: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .inner-page-main-wrapper .blog-box .img-icon img {
@@ -3344,6 +3524,10 @@ header css
   background: #fff;
   border: 1px solid #797979;
   display: inline-block;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   position: relative;
   overflow: hidden;
@@ -3364,6 +3548,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .blog-box .blog-content .social-center ul li a:hover {
@@ -3379,6 +3566,9 @@ header css
 .inner-page-main-wrapper .blog-box .blog-content .social-center ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .blog-box .blog-content .social-center ul li + li {
@@ -3409,6 +3599,9 @@ header css
   transition-duration: 0.3s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .blog-box .blog-content .r-btn:hover {
@@ -3422,6 +3615,9 @@ header css
 .inner-page-main-wrapper .blog-box .blog-content .r-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .blog-box .new-blog-text ul li {
@@ -3454,6 +3650,10 @@ header css
   padding: 35px 20px;
   border-radius: 4px;
   margin-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .inner-page-main-wrapper .trending-main-box .trending-upper-text {
@@ -3560,6 +3760,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .trending-main-box .trending-lower-text .custom-btn:hover {
@@ -3574,15 +3777,22 @@ header css
 .inner-page-main-wrapper .trending-main-box .trending-lower-text .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .trending-main-box:hover {
   border: 1px solid #0060aa;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
 .freelauncer-slider-wrapper {
-  background-image: url(../images/frelauncer-slide.jpg);
+  background-image: url(../../images/frelauncer-slide.jpg);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3800,6 +4010,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .freelauncer-page-main-wrapper .freelauncer-summary .project-box .project-line .custom-btn:hover {
@@ -3813,6 +4026,9 @@ header css
 .freelauncer-page-main-wrapper .freelauncer-summary .project-box .project-line .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .freelauncer-page-main-wrapper .freelauncer-summary .project-box .line-none {
@@ -3917,7 +4133,9 @@ header css
 }
 .freelauncer-page-main-wrapper .inner_widget .portfolio-main-wrapper .portfolio-box img {
   width: 100%;
+  -webkit-transform: rotate(15deg) scale(1.4);
   transform: rotate(15deg) scale(1.4);
+  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 .freelauncer-page-main-wrapper .inner_widget .portfolio-main-wrapper .portfolio-box .overlay-port {
@@ -3929,6 +4147,10 @@ header css
   background: rgba(17, 17, 17, 0.6509803922);
   top: 214px;
   left: 0px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .freelauncer-page-main-wrapper .inner_widget .portfolio-main-wrapper .portfolio-box .overlay-port h4 {
@@ -3946,9 +4168,14 @@ header css
 }
 .freelauncer-page-main-wrapper .inner_widget .portfolio-main-wrapper .portfolio-box:hover .overlay-port {
   top: 0px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .freelauncer-page-main-wrapper .inner_widget .portfolio-main-wrapper .portfolio-box:hover img {
+  -webkit-transform: rotate(0) scale(1);
   transform: rotate(0) scale(1);
 }
 .freelauncer-page-main-wrapper .inner_widget .portfolio-main-wrapper .portfolio-box-blank {
@@ -4071,6 +4298,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .freelauncer-page-main-wrapper .inner_widget .custom-btn:hover {
@@ -4085,11 +4315,14 @@ header css
 .freelauncer-page-main-wrapper .inner_widget .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
 /* ....................................
-1.1 Footer CSS
+1.1 Footer CSS 
 .......................................*/
 .footer-main-wrapper {
   float: left;
@@ -4183,7 +4416,7 @@ header css
 }
 
 /* ....................................
-1.1 INDEX 03 CSS
+1.1 INDEX 03 CSS 
 .......................................*/
 /*---------
  section
@@ -4222,6 +4455,10 @@ header css
 .bg-yellow span {
   background-color: #fae2c2 !important;
   color: #ff9e21 !important;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .bg-yellow:hover {
@@ -4323,6 +4560,10 @@ header css
   width: 100%;
   height: 100%;
   background: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   transform: translateY(0px) rotateX(0deg);
   padding: 20px;
@@ -4353,6 +4594,10 @@ header css
   border: 1px solid #fff;
   line-height: 50px;
   border-radius: 50px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .our-team-main3 section .team-box .details ul li a:hover {
@@ -4430,8 +4675,7 @@ header css
   height: 65px;
   line-height: 40px;
   padding-left: 10px;
-  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
-          clip-path: polygon(0 0, 0% 100%, 100% 0);
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
   color: #fff;
   border-top-left-radius: 7px;
 }
@@ -4447,6 +4691,10 @@ header css
   background-color: #fae2c2;
   border-radius: 50px;
   color: #ff9e21;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .testimonial-main3 .test-slider .owl-carousel .owl-nav button:hover {
@@ -4455,7 +4703,7 @@ header css
 }
 
 .index1-slider-wrapper {
-  background-image: url(../images/banner.jpg);
+  background-image: url(../../images/banner.jpg);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -4570,6 +4818,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0a3382;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index1-slider-wrapper .overlay-slider .sldier-contact-form ul .btn-from a:hover {
@@ -4583,6 +4834,9 @@ header css
 .index1-slider-wrapper .overlay-slider .sldier-contact-form ul .btn-from a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index1-slider-wrapper .overlay-slider .sldier-contact-form .treding-list {
@@ -4638,6 +4892,10 @@ header css
   padding: 35px 20px;
   border-radius: 4px;
   margin-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .treding-job-wrapper .custom-tab .tab-panel .tab-content .trending-main-box .trending-upper-text {
@@ -4745,6 +5003,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .treding-job-wrapper .custom-tab .tab-panel .tab-content .trending-main-box .trending-lower-text .custom-btn:hover {
@@ -4758,10 +5019,17 @@ header css
 .treding-job-wrapper .custom-tab .tab-panel .tab-content .trending-main-box .trending-lower-text .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .treding-job-wrapper .custom-tab .tab-panel .tab-content .trending-main-box:hover {
   border: 1px solid #0060aa;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .treding-job-wrapper .custom-tab .custom-pegination {
@@ -4792,6 +5060,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .treding-job-wrapper .custom-tab .custom-pegination ul li a:hover {
@@ -4805,6 +5076,9 @@ header css
 .treding-job-wrapper .custom-tab .custom-pegination ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .treding-job-wrapper .custom-tab .custom-pegination ul li + li {
@@ -4833,6 +5107,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .treding-job-wrapper .custom-tab .custom-pegination ul .preious a:hover {
@@ -4846,6 +5123,9 @@ header css
 .treding-job-wrapper .custom-tab .custom-pegination ul .preious a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .treding-job-wrapper .custom-tab .custom-pegination ul .active a {
@@ -4918,6 +5198,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .professional-main-wrapper .left-side a:hover {
@@ -4931,6 +5214,9 @@ header css
 .professional-main-wrapper .left-side a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .professional-main-wrapper .right-side {
@@ -4968,6 +5254,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .professional-main-wrapper .right-side a:hover {
@@ -4981,6 +5270,9 @@ header css
 .professional-main-wrapper .right-side a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -4996,6 +5288,10 @@ header css
   float: left;
   padding: 30px;
   margin-top: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .category-main-wrapper .category-box .category-icon {
@@ -5256,6 +5552,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .freelauncer-main-wrapper .view-frofile-btn a:hover {
@@ -5269,6 +5568,9 @@ header css
 .freelauncer-main-wrapper .view-frofile-btn a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -5344,6 +5646,10 @@ header css
 }
 .pricing-main-wrapper .custom-pricing-wrapper .tab-content .pricing-main-box {
   border: 1px solid #f1efef;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .pricing-main-wrapper .custom-pricing-wrapper .tab-content .pricing-main-box .pricing-upper {
@@ -5352,6 +5658,10 @@ header css
   padding: 35px 0px 50px;
   border-bottom-right-radius: 240px 114px;
   border-bottom-left-radius: 240px 114px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .pricing-main-wrapper .custom-pricing-wrapper .tab-content .pricing-main-box .pricing-upper h5 {
@@ -5411,6 +5721,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .pricing-main-wrapper .custom-pricing-wrapper .tab-content .pricing-main-box .pric-btn a:hover {
@@ -5424,14 +5737,25 @@ header css
 .pricing-main-wrapper .custom-pricing-wrapper .tab-content .pricing-main-box .pric-btn a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .pricing-main-wrapper .custom-pricing-wrapper .tab-content .pricing-main-box:hover {
   border-color: #0060aa;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .pricing-main-wrapper .custom-pricing-wrapper .tab-content .pricing-main-box:hover .pricing-upper {
   background-color: #0060aa;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .pricing-main-wrapper .custom-pricing-wrapper .tab-content .pricing-main-box:hover .pricing-upper h5 {
@@ -5455,6 +5779,10 @@ header css
   bottom: 50%;
   right: 50%;
   opacity: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .blog-main-wrapper .blog-box .img-icon img {
@@ -5528,6 +5856,9 @@ header css
   transition-duration: 0.3s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .blog-main-wrapper .blog-box .blog-content .r-btn:hover {
@@ -5541,6 +5872,9 @@ header css
 .blog-main-wrapper .blog-box .blog-content .r-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .blog-main-wrapper .blog-box:hover .blog-content h3 a {
@@ -5555,7 +5889,7 @@ header css
 }
 
 .index1-listing-slider-wrapper {
-  background-image: url(../images/listing.jpg);
+  background-image: url(../../images/listing.jpg);
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -5645,10 +5979,21 @@ header css
 .index2-slider-wrapper .index2-slider-img img {
   width: 100%;
   margin-left: 145px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .index2-slider-wrapper .index2-slider-img:hover img {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
   transform: translateY(-8px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .index2-slider-wrapper .slider-caption {
@@ -5736,6 +6081,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index2-slider-wrapper .slider-form .search-btn:hover {
@@ -5749,6 +6097,9 @@ header css
 .index2-slider-wrapper .slider-form .search-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index2-slider-wrapper .slider-form .play-sec {
@@ -5841,6 +6192,10 @@ header css
   height: 100%;
   padding: 22px 31px;
   background-color: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .popular-category-wrapper .popular-category-main-box .category-box .category-overlay h5 {
@@ -5852,11 +6207,22 @@ header css
 }
 .popular-category-wrapper .popular-category-main-box .category-box:hover {
   box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2588235294);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .popular-category-wrapper .popular-category-main-box .category-box:hover .category-overlay {
   top: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .popular-category-wrapper:before {
@@ -5987,7 +6353,14 @@ header css
 }
 .index2-pricing-wrapper .custom-pricing-wrapper .tab-content .latest-job-main-wrapper:hover {
   box-shadow: 0px 0px 40px #ccc;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .index2-pricing-wrapper .custom-pricing-wrapper .tab-content .custom-pegination {
@@ -6019,6 +6392,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fd2378;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index2-pricing-wrapper .custom-pricing-wrapper .tab-content .custom-pegination ul li a:hover {
@@ -6032,6 +6408,9 @@ header css
 .index2-pricing-wrapper .custom-pricing-wrapper .tab-content .custom-pegination ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index2-pricing-wrapper .custom-pricing-wrapper .tab-content .custom-pegination ul li + li {
@@ -6060,6 +6439,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fd2378;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index2-pricing-wrapper .custom-pricing-wrapper .tab-content .custom-pegination ul .preious a:hover {
@@ -6073,6 +6455,9 @@ header css
 .index2-pricing-wrapper .custom-pricing-wrapper .tab-content .custom-pegination ul .preious a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index2-pricing-wrapper .custom-pricing-wrapper .tab-content .custom-pegination ul .active a {
@@ -6178,7 +6563,14 @@ header css
 }
 .employment-main-wrapper .employe-job-box .employ-text-box .employ-icon span:hover {
   box-shadow: 0px 0px 40px #ccc;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .employment-main-wrapper .employe-job-box .employ-text-box .user-job span {
@@ -6339,7 +6731,14 @@ header css
 }
 .highest-freelancer-main-wrapper .frrelncer-slider .custom-card:hover {
   box-shadow: 0px 0px 40px #ccc;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .highest-freelancer-main-wrapper .frrelncer-slider .owl-nav {
@@ -6482,7 +6881,14 @@ header css
 }
 .plan-package-main-wrapper .custom-package-tab .tab-content .package-box:hover {
   box-shadow: 0px 0px 40px #ccc;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .plan-package-main-wrapper:before {
@@ -6572,10 +6978,21 @@ header css
   z-index: -1;
 }
 .download-mobile-wrapper .mobile-img {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .download-mobile-wrapper .mobile-img:hover {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
   transform: translateY(-8px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -6711,6 +7128,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background-color: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .post-latest-job-wrapper .latest-post-main-box .center-btn a:hover {
@@ -6724,6 +7144,9 @@ header css
 .post-latest-job-wrapper .latest-post-main-box .center-btn a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -6789,6 +7212,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background-color: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .client-say-wrapper .heading-text .custom-btn:hover {
@@ -6802,6 +7228,9 @@ header css
 .client-say-wrapper .heading-text .custom-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .client-say-wrapper .client-post-wrapper {
@@ -6820,6 +7249,10 @@ header css
   width: 100%;
   text-align: center;
   margin-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .client-say-wrapper .client-post-wrapper .left-side-client .left-side-one span {
@@ -6844,7 +7277,14 @@ header css
 }
 .client-say-wrapper .client-post-wrapper .left-side-client .left-side-one:hover {
   box-shadow: 0px 0px 40px #ccc;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .client-say-wrapper .client-post-wrapper .right-side-client {
@@ -6858,6 +7298,10 @@ header css
   width: 100%;
   text-align: center;
   margin-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .client-say-wrapper .client-post-wrapper .right-side-client .right-side-one span {
@@ -6882,7 +7326,14 @@ header css
 }
 .client-say-wrapper .client-post-wrapper .right-side-client .right-side-one:hover {
   box-shadow: 0px 0px 40px #ccc;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -6922,6 +7373,10 @@ header css
   border: 1px solid #ccc;
   padding: 20px;
   margin-top: 75px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .right-jobs-wrapper .project-wrapper .project-icon {
@@ -6939,7 +7394,14 @@ header css
 }
 .right-jobs-wrapper .project-wrapper:hover {
   box-shadow: 0px 0px 40px #ccc;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -7032,6 +7494,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #111;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index2-footer-wrapper .bottom-footer ul li a:hover {
@@ -7047,6 +7512,9 @@ header css
 .index2-footer-wrapper .bottom-footer ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index2-footer-wrapper .bottom-footer ul li + li {
@@ -7054,7 +7522,7 @@ header css
 }
 
 /* ....................................
-1.1 LOGIN 03 CSS
+1.1 LOGIN 03 CSS 
 .......................................*/
 .login_box_main_wrapper {
   float: left;
@@ -7217,6 +7685,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0a3382;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .login_box_main_wrapper .signin-wrapper .left-side form .login-btn-sec .sub-btn:hover {
@@ -7230,6 +7701,9 @@ header css
 .login_box_main_wrapper .signin-wrapper .left-side form .login-btn-sec .sub-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .login_box_main_wrapper .signin-wrapper .left-side form .login-btn-sec .social-btn span {
@@ -7277,6 +7751,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #0060aa;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .login_box_main_wrapper .signin-wrapper .left-side form .login-btn-sec .social-btn ul li a:hover {
@@ -7292,6 +7769,9 @@ header css
 .login_box_main_wrapper .signin-wrapper .left-side form .login-btn-sec .social-btn ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .login_box_main_wrapper .signin-wrapper .left-side form .login-btn-sec .social-btn ul li + li {
@@ -7361,7 +7841,7 @@ header css
 }
 
 /* ....................................
-1.1 PROJECT 03 CSS
+1.1 PROJECT 03 CSS 
 .......................................*/
 .inner-page-main-wrapper .develop_main_wrapper {
   background: #fff;
@@ -7429,6 +7909,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .develop_main_wrapper .bid_button a:hover {
@@ -7442,6 +7925,9 @@ header css
 .inner-page-main-wrapper .develop_main_wrapper .bid_button a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .descript_main_wrapper {
@@ -7613,6 +8099,9 @@ header css
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .descript_main_wrapper .bid-details-main .place_btn:hover {
@@ -7626,6 +8115,9 @@ header css
 .inner-page-main-wrapper .descript_main_wrapper .bid-details-main .place_btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .inner-page-main-wrapper .descript_main_wrapper .proposal_main_sec {
@@ -7729,7 +8221,7 @@ header css
 }
 
 /* ....................................
-1.2 SHORTCODE 03 CSS
+1.2 SHORTCODE 03 CSS 
 .......................................*/
 a {
   text-decoration: none;
@@ -7970,6 +8462,10 @@ ul {
   position: relative;
   color: #ffffff;
   border-bottom: 1px solid #80aaf3;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .accordion5-wrapper .accordion-item .accordion-header button:before {
@@ -8023,6 +8519,10 @@ ul {
   margin: 0 6px;
   font-weight: 600;
   text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .button1-wrapper .btn1:hover {
@@ -8300,6 +8800,8 @@ ul {
   color: #232323;
 }
 .button6-wrapper .btn6.instagram {
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   background-size: 140% auto;
   border: none;
@@ -8354,6 +8856,9 @@ ul {
   border-color: #4285f4;
 }
 .button8-wrapper .btn8:after {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .button8-wrapper .btn8:after, .button8-wrapper .btn8:before {
@@ -8482,6 +8987,10 @@ ul {
   height: 100%;
   z-index: -1;
   border-radius: 50px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
   background-color: #4285f4;
 }
@@ -8619,7 +9128,6 @@ ul {
 @media (max-width: 991px) {
   .btn-sizes a {
     display: block !important;
-    width: -moz-max-content !important;
     width: max-content !important;
     margin: 15px auto !important;
     text-align: center !important;
@@ -8801,6 +9309,10 @@ ul {
   text-transform: uppercase;
   margin-top: 20px;
   display: inline-block;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .tab-one-wrapper .tab-content .tab-one-home .tab-one-content a:hover {
@@ -8825,7 +9337,15 @@ ul {
 .tab-two-wrapper .nav-pills .nav-item .nav-link i {
   display: block;
   margin-bottom: 10px;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
   transform: translateY(0);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .tab-two-wrapper .nav-pills .nav-item .nav-link.active {
@@ -8836,6 +9356,10 @@ ul {
   color: #4285f4;
 }
 .tab-two-wrapper .nav-pills .nav-item .nav-link:hover i {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
   transform: translateY(-5px);
 }
 .tab-two-wrapper .tab-content .tab-two-head {
@@ -8960,6 +9484,10 @@ ul {
   border-bottom: 2px solid #232323;
   text-transform: uppercase;
   font-weight: 600;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .tab-five-wrapper .tab-content .tab-five-content a:hover {
@@ -9070,9 +9598,6 @@ ul {
   border-radius: 0px;
   color: #ffffff;
   padding: 20px 10px;
-}
-.form-four-wrapper .form-four form input::-moz-placeholder {
-  color: gray;
 }
 .form-four-wrapper .form-four form input::placeholder {
   color: gray;
@@ -9278,6 +9803,9 @@ ul {
 .count-one-wrapper #countdown-one {
   text-align: center;
   background: #222;
+  background-image: -webkit-linear-gradient(top, #222, #333, #333, #222);
+  background-image: -moz-linear-gradient(top, #222, #333, #333, #222);
+  background-image: -ms-linear-gradient(top, #222, #333, #333, #222);
   background-image: -o-linear-gradient(top, #222, #333, #333, #222);
   border: 1px solid #111;
   border-radius: 5px;
@@ -9291,6 +9819,9 @@ ul {
   width: 8px;
   height: 65px;
   background: #444;
+  background-image: -webkit-linear-gradient(top, #555, #444, #444, #555);
+  background-image: -moz-linear-gradient(top, #555, #444, #444, #555);
+  background-image: -ms-linear-gradient(top, #555, #444, #444, #555);
   background-image: -o-linear-gradient(top, #555, #444, #444, #555);
   border: 1px solid #111;
   border-top-left-radius: 6px;
@@ -9305,6 +9836,9 @@ ul {
   width: 8px;
   height: 65px;
   background: #444;
+  background-image: -webkit-linear-gradient(top, #555, #444, #444, #555);
+  background-image: -moz-linear-gradient(top, #555, #444, #444, #555);
+  background-image: -ms-linear-gradient(top, #555, #444, #444, #555);
   background-image: -o-linear-gradient(top, #555, #444, #444, #555);
   border: 1px solid #111;
   border-top-right-radius: 6px;
@@ -9322,6 +9856,9 @@ ul {
   text-align: center;
   color: #111111;
   background-color: #ddd;
+  background-image: -webkit-linear-gradient(top, #bbb, #eee);
+  background-image: -moz-linear-gradient(top, #bbb, #eee);
+  background-image: -ms-linear-gradient(top, #bbb, #eee);
   background-image: -o-linear-gradient(top, #bbb, #eee);
   border-top: 1px solid #fff;
   border-radius: 3px;
@@ -9715,9 +10252,15 @@ ul {
   bottom: -19px;
   left: 50px;
   z-index: 1;
+  -webkit-transform: rotate(27deg);
+  -ms-transform: rotate(27deg);
   transform: rotate(27deg);
 }
 .testimonial-two-wrapper .slider-test .owl-carousel .item .slider-wrapper .slider-content:hover {
+  -moz-transform: translate3d(0, -3px, 0);
+  -o-transform: translate3d(0, -3px, 0);
+  -ms-transform: translate3d(0, -3px, 0);
+  -webkit-transform: translate3d(0, -3px, 0);
   transform: translate3d(0, -3px, 0);
 }
 .testimonial-two-wrapper .slider-test .owl-carousel .item .slider-wrapper .slider-img {
@@ -9778,6 +10321,10 @@ ul {
   background-color: #f7f7f7;
   position: relative;
   padding: 45px;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
 .testimonial-three-wrapper .slider-two-wrapper:hover {
@@ -9785,11 +10332,17 @@ ul {
   background: #ffffff;
 }
 .testimonial-three-wrapper .slider-two-wrapper:hover .slider-quote {
+  -ms-transform: translateY(-50%) rotateY(-180deg) rotateX(-180deg);
+  -moz-transform: translateY(-50%) rotateY(-180deg) rotateX(-180deg);
+  -webkit-transform: translateY(-50%) rotateY(-180deg) rotateX(-180deg);
   transform: translateY(-50%) rotateY(-180deg) rotateX(-180deg);
 }
 .testimonial-three-wrapper .slider-two-wrapper .slider-quote {
   position: absolute;
   top: 0;
+  -ms-transform: translateY(-50%) rotateY(0) rotateX(0);
+  -moz-transform: translateY(-50%) rotateY(0) rotateX(0);
+  -webkit-transform: translateY(-50%) rotateY(0) rotateX(0);
   transform: translateY(-50%) rotateY(0) rotateX(0);
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -9878,18 +10431,30 @@ ul {
   background: #676b6e;
   border-radius: 50px;
   margin: 10px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .testimonial-four-wrapper .forth-slider .owl-carousel button.owl-dot span:hover {
   background: #4285f4;
   width: 12px;
   height: 12px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .testimonial-four-wrapper .forth-slider .owl-carousel button.owl-dot.active span {
   background: #4285f4;
   width: 12px;
   height: 12px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -9927,6 +10492,10 @@ ul {
 .testimonial-five-wrapper .testimonial-five .owl-carousel .owl-nav .owl-prev, .testimonial-five-wrapper .testimonial-five .owl-carousel .owl-nav .owl-next {
   background: #f7f7f7;
   color: #999999;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
   position: absolute;
   top: 220px;
@@ -10331,6 +10900,10 @@ ul {
   right: 0;
   opacity: 0;
   transition: 0.2s ease;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-one-wrapper .team-slider-wrapper .owl-carousel .item .slider-content .image-wrapper .image-wrapper-overlay .content-wrapper {
@@ -10340,6 +10913,10 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   text-align: center;
 }
@@ -10373,11 +10950,19 @@ ul {
   width: 35px;
   text-align: center;
   line-height: 34px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-one-wrapper .team-slider-wrapper .owl-carousel .item .slider-content .image-wrapper .image-wrapper-overlay .content-wrapper .social-icon li a:hover {
   border: 1px solid #4285f4;
   background: #4285f4;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-one-wrapper .team-slider-wrapper .owl-carousel .item .slider-content:hover .image-wrapper-overlay {
@@ -10387,6 +10972,10 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   overflow: hidden;
 }
@@ -10403,6 +10992,10 @@ ul {
   left: 33%;
   bottom: -96px;
   z-index: 100;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-one-wrapper .team-slider-wrapper .owl-carousel .owl-nav .owl-next {
@@ -10418,6 +11011,10 @@ ul {
   left: 61%;
   bottom: -96px;
   z-index: 100;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-one-wrapper .team-slider-wrapper .owl-theme .owl-dots {
@@ -10429,18 +11026,30 @@ ul {
 }
 .team-one-wrapper .team-slider-wrapper .owl-theme .owl-dots .owl-dot {
   margin-left: 3px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-one-wrapper .team-slider-wrapper .owl-theme .owl-dots .owl-dot span {
   width: 5px;
   height: 5px;
   background: #cccccc;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-one-wrapper .team-slider-wrapper .owl-theme .owl-dots .owl-dot:hover span, .team-one-wrapper .team-slider-wrapper .owl-theme .owl-dots .owl-dot.active span {
   background: #4285f4;
   width: 8px;
   height: 8px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -10477,9 +11086,12 @@ ul {
 }
 .team-two-wrapper .slider-two-wrapper .owl-carousel .item .slider-two-content .team-two-content .team-title, .team-two-wrapper .slider-two-wrapper .owl-carousel .item .slider-two-content .team-two-content .team-sub-title, .team-two-wrapper .slider-two-wrapper .owl-carousel .item .slider-two-content .team-two-content .social-icon-two {
   color: #ffffff;
+  -webkit-transform: translateY(15px);
   transform: translateY(15px);
   opacity: 0;
+  transition: opacity 0.85s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
   transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.85s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.85s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.85s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.85s cubic-bezier(0.19, 1, 0.22, 1);
 }
 .team-two-wrapper .slider-two-wrapper .owl-carousel .item .slider-two-content .team-two-content .social-icon-two {
   position: absolute;
@@ -10504,6 +11116,7 @@ ul {
 }
 .team-two-wrapper .slider-two-wrapper .owl-carousel .item .slider-two-content:hover .team-two-content .team-title, .team-two-wrapper .slider-two-wrapper .owl-carousel .item .slider-two-content:hover .team-two-content .team-sub-title, .team-two-wrapper .slider-two-wrapper .owl-carousel .item .slider-two-content:hover .team-two-content .social-icon-two {
   opacity: 1;
+  -webkit-transform: translateY(0);
   transform: translateY(0);
   visibility: visible;
   display: block;
@@ -10631,18 +11244,30 @@ ul {
 }
 .team-four-wrapper .owl-theme .owl-dots .owl-dot {
   margin-left: 3px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-four-wrapper .owl-theme .owl-dots .owl-dot span {
   width: 5px;
   height: 5px;
   background: #cccccc;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .team-four-wrapper .owl-theme .owl-dots .owl-dot:hover span, .team-four-wrapper .owl-theme .owl-dots .owl-dot.active span {
   background: #4285f4;
   width: 8px;
   height: 8px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -10939,6 +11564,10 @@ ul {
   font-weight: 500;
   top: 0;
   position: relative;
+  -webkit-transition: 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -moz-transition: 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -ms-transition: 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+  -o-transition: 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
   transition: 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
 }
 .icon6-main-wrapper .social-icons ul li a span.brand-icon {
@@ -10950,6 +11579,10 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 .icon6-main-wrapper .social-icons ul li a.facebook {
@@ -10970,6 +11603,10 @@ ul {
 }
 .icon6-main-wrapper .social-icons ul li a:hover .brand-icon {
   top: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
@@ -11047,10 +11684,8 @@ ul {
 @media (max-width: 580px) {
   .icon1-main-wrapper .social-icons ul, .icon2-main-wrapper .social-icons ul, .icon3-main-wrapper .social-icons ul, .icon4-main-wrapper .social-icons ul, .icon5-main-wrapper .social-icons ul, .icon7-main-wrapper .social-icons ul {
     display: block;
-    -moz-column-count: 3;
-         column-count: 3;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
     max-width: 280px;
     text-align: center;
     margin: 0 auto;
@@ -11060,10 +11695,8 @@ ul {
   }
   .icon6-main-wrapper .social-icons ul {
     display: block;
-    -moz-column-count: 3;
-         column-count: 3;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    column-count: 3;
+    column-gap: 10px;
     max-width: 280px;
     text-align: center;
     margin: 0 auto;
@@ -11112,6 +11745,10 @@ ul {
   visibility: hidden;
   width: 100%;
   transition: 0.2s ease;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery1-wrapper .img-gallery-wrapper ul li.portfolio_img_wrapper .portfolio_img .portfolio_img_overlay .portfolio_img_text {
@@ -11180,6 +11817,10 @@ ul {
   visibility: hidden;
   width: 100%;
   transition: 0.2s ease;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery1-wrapper .img-gallery-wrapper ul li.portfolio_img_wrapper .portfolio_img .portfolio_img_overlay .portfolio_img_text {
@@ -11238,6 +11879,10 @@ ul {
   visibility: hidden;
   width: calc(100% - 60px);
   transition: 0.2s ease;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery2-wrapper .portfolio_img_wrapper:hover .portfolio_img_overlay {
@@ -11308,6 +11953,10 @@ ul {
   visibility: hidden;
   width: 100%;
   transition: 0.2s ease;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery3-wrapper .img-gallery-wrapper ul li.portfolio_img_wrapper .portfolio_img .portfolio_img_overlay .portfolio_img_text {
@@ -11349,21 +11998,37 @@ ul {
 }
 .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-dots .owl-dot {
   margin-left: 3px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-dots .owl-dot span {
   width: 10px;
   height: 10px;
   background: #cccccc;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-dots .owl-dot.active span, .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-dots .owl-dot:hover span {
   background: #4285f4;
   width: 10px;
   height: 10px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-dots .owl-dot.active, .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-dots .owl-dot:hover {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery3-wrapper .section4_portfolio_slider .owl-theme .owl-nav {
@@ -11386,6 +12051,10 @@ ul {
   right: 400px;
   opacity: 0;
   transition: 0.2s ease;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery3-wrapper .portfolio_image_wrapper:hover .portfolio_image_overlay {
@@ -11395,6 +12064,10 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   overflow: hidden;
 }
@@ -11405,6 +12078,10 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -11421,6 +12098,10 @@ ul {
   float: left;
   width: 100%;
   margin-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery4-wrapper .section6_nav_tabs {
@@ -11488,22 +12169,42 @@ ul {
   border: 1px solid #4285f4;
   background: #4285f4;
   border-top: none;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery4-wrapper .tab_image_wrapper:hover .project_title h4 a {
   color: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery4-wrapper .tab_image_wrapper:hover .project_category h4 a {
   color: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery4-wrapper .tab_image_wrapper:hover .project_likes a {
   color: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery4-wrapper .tab_image_wrapper:hover .project_likes a i {
   color: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .gallery4-wrapper .tab_image figure {
@@ -11525,16 +12226,13 @@ ul {
 @media (max-width: 991px) {
   .gallery1-wrapper .img-gallery-wrapper ul {
     display: block;
-    -moz-column-count: 2;
-         column-count: 2;
-    -moz-column-gap: 10px;
-         column-gap: 10px;
+    column-count: 2;
+    column-gap: 10px;
   }
 }
 @media (max-width: 480px) {
   .gallery1-wrapper .img-gallery-wrapper ul {
-    -moz-column-count: 1;
-         column-count: 1;
+    column-count: 1;
   }
   .nav-link {
     padding: 10px 14px;
@@ -11601,6 +12299,10 @@ ul {
   box-shadow: 0px 0px 5px #e9e9e9;
   text-align: center;
   border: 1px solid transparent;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-1 .p-box-1 h4 {
@@ -11628,6 +12330,10 @@ ul {
   color: #285592;
   border: 1px solid #285595;
   background: #fff;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-1 .p-box-1:hover .btn-1 {
@@ -11681,6 +12387,10 @@ ul {
   text-align: center;
   position: relative;
   z-index: 1;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-2 .p-box-2 h4 {
@@ -11724,6 +12434,10 @@ ul {
   border: 1px solid #285595;
   background: #fff;
   margin-top: 30px;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-2 .p-box-2:before {
@@ -11766,6 +12480,10 @@ ul {
   background: #0F1012;
   color: #f9f9f9;
   border: 2px solid transparent;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-3 .p-box-3 .deal {
@@ -11774,6 +12492,10 @@ ul {
 .pt-section-3 .p-box-3 .deal span {
   display: block;
   text-align: center;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-3 .p-box-3 .deal span:first-of-type {
@@ -11784,6 +12506,10 @@ ul {
 }
 .pt-section-3 .p-box-3 .price {
   font-weight: bold;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
   display: block;
   background: #292b2e;
@@ -11814,6 +12540,10 @@ ul {
   background: #292b2e;
   color: #f9f9f9;
   padding: 10px 37px;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-3 .p-box-3 .btn-5:hover {
@@ -11835,6 +12565,10 @@ ul {
   padding: 40px;
   margin-bottom: 30px;
   background-color: #edecfc;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-4 .p-box-4 .p-box-4-1 h2 {
@@ -11865,6 +12599,10 @@ ul {
   background-color: #fff;
   border: 1px solid #797979;
   border-radius: 5px;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-4 .p-box-4:hover .p-box-4-1 {
@@ -11888,6 +12626,10 @@ ul {
   background-color: #444444;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-5 .p-box-5 .heading-5 {
@@ -11927,6 +12669,10 @@ ul {
   border: none;
   background: #797979;
   color: #fff;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .pt-section-5 .p-box-5:hover {
@@ -11961,6 +12707,10 @@ ul {
   border: 1px solid #e9e9e9;
   margin-top: 30px;
   padding-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .ic-section-1 .box p {
@@ -12024,6 +12774,10 @@ ul {
   text-align: center;
   border: 1px solid #e9e9e9;
   background-color: #fff;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .ic-section-2 .icon-box-two::before {
@@ -12089,11 +12843,19 @@ ul {
   padding-bottom: 40px;
   text-align: center;
   border: 1px solid #e9e9e9;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .ic-section-3 .icon-box-three span {
   background-color: #797979;
   height: 90px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   padding-bottom: 15px;
   color: #fff;
@@ -12141,6 +12903,10 @@ ul {
 .ic-section-4 .icon-box-four {
   text-align: center;
   border: 1px solid #e9e9e9;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
   color: #fff;
   position: relative;
@@ -12160,6 +12926,10 @@ ul {
   height: 0;
 }
 .ic-section-4 .icon-box-four span {
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .ic-section-4 .icon-box-four span i {
@@ -12171,6 +12941,10 @@ ul {
   width: 70px;
   height: 70px;
   line-height: 70px;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .ic-section-4 .icon-box-four h4 {
@@ -12182,6 +12956,10 @@ ul {
   color: #ffffff;
 }
 .ic-section-4 .icon-box-four p {
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
   padding-bottom: 30px;
   padding-left: 20px;
@@ -12212,6 +12990,10 @@ ul {
   text-align: center;
   border: 1px solid #e9e9e9;
   padding-bottom: 30px;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -moz-transition: all 0.7s;
   transition: all 0.7s;
 }
 .ic-section-5 .icon-box-five::before, .ic-section-5 .icon-box-five::after {
@@ -12254,6 +13036,10 @@ ul {
   right: 0;
   margin: auto;
   background-color: #e9e9e9;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .ic-section-5 .icon-box-five h4 {
@@ -12542,10 +13328,21 @@ ul {
 .index3-slider-wrapper .index2-slider-img img {
   width: 100%;
   margin-left: 145px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .index3-slider-wrapper .index2-slider-img:hover img {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  -ms-transform: translateY(-8px);
   transform: translateY(-8px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .index3-slider-wrapper .slider-caption {
@@ -12637,6 +13434,9 @@ ul {
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #fff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index3-slider-wrapper .slider-form .search-btn:hover {
@@ -12650,6 +13450,9 @@ ul {
 .index3-slider-wrapper .slider-form .search-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index3-slider-wrapper .project-pipe-wrapper {
@@ -12687,6 +13490,10 @@ ul {
   box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.0901960784);
   margin-top: 50px;
   border-radius: 4px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .how-it-work-wrapper .working-box-wrapper span {
@@ -12711,19 +13518,38 @@ ul {
   padding-bottom: 20px;
 }
 .how-it-work-wrapper .working-box-wrapper:hover {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .how-it-work-wrapper .working-box-wrapper:hover span {
   background-color: #f37638;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .how-it-work-wrapper .working-box-wrapper:hover svg {
   fill: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .how-it-work-wrapper .working-box-wrapper:hover p {
   color: #111;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -12747,6 +13573,10 @@ ul {
   padding: 30px;
   box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.0901960784);
   background-color: #fff;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .explore-category-wrapper .category-main-slider-wrapper .swiper-container .swiper-wrapper .swiper-slide h4 {
@@ -12769,7 +13599,14 @@ ul {
 }
 .explore-category-wrapper .category-main-slider-wrapper .swiper-container .swiper-wrapper .swiper-slide:hover {
   background-color: #f37638;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
 }
 .explore-category-wrapper .category-main-slider-wrapper .swiper-container .swiper-wrapper .swiper-slide:hover span {
@@ -12876,6 +13713,9 @@ ul {
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #2276e3;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .explore-category-wrapper .category-main-slider-wrapper .swiper-container .swiper-wrapper .custom-card .custom-card-body .apply-btn:hover {
@@ -12889,6 +13729,9 @@ ul {
 .explore-category-wrapper .category-main-slider-wrapper .swiper-container .swiper-wrapper .custom-card .custom-card-body .apply-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .explore-category-wrapper .category-main-slider-wrapper .swiper-container .swiper-wrapper .custom-card .custom-card-footer {
@@ -12920,7 +13763,14 @@ ul {
 }
 .explore-category-wrapper .category-main-slider-wrapper .swiper-container .swiper-wrapper .custom-card:hover {
   box-shadow: 0px 0px 40px #ccc;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
   background-color: transparent;
 }
@@ -13008,6 +13858,9 @@ ul {
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #eaf2f7;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .love-job-main-wrapper .home1-section-heading1 .heading-btn:hover {
@@ -13021,6 +13874,9 @@ ul {
 .love-job-main-wrapper .home1-section-heading1 .heading-btn:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .love-job-main-wrapper .love-post-wrapper {
@@ -13039,6 +13895,10 @@ ul {
   border-radius: 4px;
   box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.0901960784);
   margin-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .love-job-main-wrapper .love-post-wrapper .left-side-love .left-side-one a h5 {
@@ -13086,6 +13946,9 @@ ul {
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #2276e3;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .love-job-main-wrapper .love-post-wrapper .left-side-love .left-side-one .love-footer .love-btn a:hover {
@@ -13099,13 +13962,23 @@ ul {
 .love-job-main-wrapper .love-post-wrapper .left-side-love .left-side-one .love-footer .love-btn a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .love-job-main-wrapper .love-post-wrapper .left-side-love .left-side-one .love-footer .love-text h5 {
   font-size: 20px;
 }
 .love-job-main-wrapper .love-post-wrapper .left-side-love .left-side-one:hover {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .love-job-main-wrapper .love-post-wrapper .right-side-love {
@@ -13120,6 +13993,10 @@ ul {
   border-radius: 4px;
   box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.0901960784);
   margin-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 .love-job-main-wrapper .love-post-wrapper .right-side-love .right-side-one a h5 {
@@ -13167,6 +14044,9 @@ ul {
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #2276e3;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .love-job-main-wrapper .love-post-wrapper .right-side-love .right-side-one .love-footer .love-btn a:hover {
@@ -13180,13 +14060,23 @@ ul {
 .love-job-main-wrapper .love-post-wrapper .right-side-love .right-side-one .love-footer .love-btn a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .love-job-main-wrapper .love-post-wrapper .right-side-love .right-side-one .love-footer .love-text h5 {
   font-size: 20px;
 }
 .love-job-main-wrapper .love-post-wrapper .right-side-love .right-side-one:hover {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
   transform: translateY(-5px);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
   transition: all 0.5s;
 }
 
@@ -13375,6 +14265,9 @@ ul {
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #2276e3;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .started-pipe-wrapper .started-box .see-job a:hover {
@@ -13388,6 +14281,9 @@ ul {
 .started-pipe-wrapper .started-box .see-job a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -13442,6 +14338,9 @@ ul {
   transition-duration: 0.6s;
   transform-origin: top left;
   background: #111;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index3-footer-wrapper .bottom-footer ul li a:hover {
@@ -13457,6 +14356,9 @@ ul {
 .index3-footer-wrapper .bottom-footer ul li a:hover:after {
   height: 100%;
   width: 135%;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 .index3-footer-wrapper .bottom-footer ul li + li {
@@ -13526,6 +14428,8 @@ ul {
   z-index: 10000;
   -o-box-shadow: 0px 0px 25px -10px;
   -ms-box-shadow: 0px 0px 25px -10px;
+  -moz-box-shadow: 0px 0px 25px -10px;
+  -webkit-box-shadow: 0px 0px 25px -10px;
   box-shadow: 0px 0px 15px -15px;
 }
 
@@ -13542,9 +14446,15 @@ ul {
   line-height: 50px;
   font-size: 24px;
   background: #e12454;
+  -webkit-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
   z-index: 1000;
   color: #fff;
+  -webkit-animation: jump 1s ease-in alternate infinite;
   animation: jump 1s ease-in alternate infinite;
 }
 
@@ -13552,6 +14462,11 @@ ul {
   color: #fff;
   line-height: 50px;
   font-size: 20px;
+  -webkit-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -13567,11 +14482,24 @@ ul {
 .change-bg2 {
   background: #0a3382 !important;
 }
-@keyframes jump {
+
+@-webkit-keyframes jump {
   0% {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
   100% {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 50%, 0);
+  }
+}
+@keyframes jump {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 50%, 0);
   }
 }
@@ -13616,4 +14544,6 @@ ul {
 
 .main-header-wrapper1 .menu-fixed .social-media-icons .login-btn .user-text a {
   color: #111;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,5 @@
-<x-guest.layouts.app>
+
+<x-guest.layouts.app :categories="$categories" >
     <div class="index2-slider-wrapper ps-rel">
         <div class="container">
             <div class="row">
@@ -9,55 +10,68 @@
                             verified, up-to-date job listings directly from the employers.</p>
                     </div>
                     <div class="slider-form mt-4 float_left">
-                        <form>
+                        <form method="GET" action="{{ route('guest.jobs.index') }}">
                             <div class="form-group mb-4 row">
                                 <div class="col-md-6 col-12 field-icon">
-                                    <input type="text" placeholder="Search">
+                                    <input type="text" name="search" placeholder="Search" class="form-control" value="{{ request('search') }}">
                                     <span><i class="fa fa-search" aria-hidden="true"></i></span>
                                 </div>
+
                                 <div class="col-md-6 col-12 field-icon">
                                     <div class="select-field">
-                                        <select>
-                                            <option selected="selected" value="">Search Location</option>
-                                            <option value="5-6">Bhopal</option>
-                                            <option value="7-9">Delhi</option>
-                                            <option value="10-13">Maharashtra</option>
-                                            <option value="10-13">Chennai</option>
+                                        <select name="location" class="form-control">
+                                            <option value="">Search Location</option>
+                                            @foreach($locations as $location)
+                                                <option value="{{ $location->name }}" {{ request('location') == $location->name ? 'selected' : '' }}>
+                                                    {{ $location->name }}
+                                                </option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <span><i class="fa fa-dot-circle-o" aria-hidden="true"></i></span>
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <div class="col-md-6 col-12 field-icon">
                                     <div class="select-field">
-                                        <select>
-                                            <option selected="selected" value="">Category</option>
-                                            <option value="5-6">Marketing &amp; Communication</option>
-                                            <option value="7-9">Software Engineering</option>
-                                            <option value="10-13">Project Management</option>
-                                            <option value="10-13">Finance</option>
+                                        <select name="category" class="form-control">
+                                            <option value="">Category</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{ $category->name }}" {{ request('category') == $category->name ? 'selected' : '' }}>
+                                                    {{ $category->name }}
+                                                </option>
+                                            @endforeach
                                         </select>
-
                                     </div>
                                     <span><i class="fa fa-th" aria-hidden="true"></i></span>
                                 </div>
+
                                 <div class="col-md-6 col-12 field-icon">
                                     <div class="select-field">
-                                        <select>
-                                            <option selected="selected" value="">Experience</option>
-                                            <option value="5-6">1-2 Yrs</option>
-                                            <option value="7-9">2-3 Yrs</option>
-                                            <option value="10-13">0-1 Yrs</option>
-                                            <option value="10-13">1-2 Yrs</option>
+                                        <select name="experience" class="form-control">
+                                            <option value="">Select Experience</option>
+                                            @foreach(\App\Experience::cases() as $experience)
+                                                <option value="{{ $experience->value }}" {{ request('experience') == $experience->value ? 'selected' : '' }}>
+                                                    {{ $experience->label() }}
+                                                </option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
                                 </div>
                             </div>
+
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-pink" style="background-color: #e83e8c; border-color: #e83e8c; color: white;">
+                                    <i class="fa fa-search me-2" aria-hidden="true"></i> Search
+                                </button>
+                            </div>
+
+
+
                         </form>
-                        <button class="search-btn"><span><i class="fa fa-search"
-                                                            aria-hidden="true"></i> &nbsp; Search Job</span></button>
+
                         <div class="play-sec float_left">
                             <div class="play-icon">
                                 <a href="{{asset('/website/javascript:;')}}" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
@@ -86,104 +100,22 @@
             </div>
             <div class="popular-category-main-box float_left">
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="category-box float_left">
-                            <span><i class="fa fa-code" aria-hidden="true"></i></span>
-                            <h4>Developer</h4>
-                            <div class="category-overlay float_left">
-                                <h5>Developer</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa.</p>
-                                <a href="{{asset('/website/javascript:;')}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    @foreach ($categories as $category)
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="category-box float_left">
+                                <span><i class="{{ $category->image }}" aria-hidden="true"></i></span>
+                                <h4>{{ $category->name }}</h4>
+                                <div class="category-overlay float_left">
+                                    <h5>{{ $category->name }}</h5>
+                                    <p>{{ $category->description }}</p>
+                                    <a href="{{route('guest.categories.show',$category->id)}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="category-box float_left">
-                            <span><i class="fa fa-code" aria-hidden="true"></i></span>
-                            <h4>Technology</h4>
-                            <div class="category-overlay float_left">
-                                <h5>Technology</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa.</p>
-                                <a href="{{asset('/website/javascript:;')}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="category-box float_left">
-                            <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
-                            <h4>Accounting</h4>
-                            <div class="category-overlay float_left">
-                                <h5>Accounting</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa.</p>
-                                <a href="{{asset('/website/javascript:;')}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="category-box float_left">
-                            <span><i class="fa fa-medkit" aria-hidden="true"></i></span>
-                            <h4>Medical</h4>
-                            <div class="category-overlay float_left">
-                                <h5>Medical</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa.</p>
-                                <a href="javascript:;">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="category-box float_left">
-                            <span><i class="fa fa-university" aria-hidden="true"></i></span>
-                            <h4>Government</h4>
-                            <div class="category-overlay float_left">
-                                <h5>Government</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa.</p>
-                                <a href="{{asset('/website/javascript:;')}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="category-box float_left">
-                            <span><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
-                            <h4>Media & News</h4>
-                            <div class="category-overlay float_left">
-                                <h5>Media & News</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa.</p>
-                                <a href="{{asset('/website/javascript:;')}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="category-box float_left">
-                            <span><i class="fa fa-cutlery" aria-hidden="true"></i></span>
-                            <h4>Restaurants</h4>
-                            <div class="category-overlay float_left">
-                                <h5>Restaurants</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa.</p>
-                                <a href="{{asset('/website/javascript:;')}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                        <div class="category-box float_left">
-                            <span><i class="fa fa-th" aria-hidden="true"></i></span>
-                            <h4>All Categories</h4>
-                            <div class="category-overlay float_left">
-                                <h5>All Categories</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa.</p>
-                                <a href="{{asset('/website/javascript:;')}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
+
         </div>
     </div>
     <div class="employment-main-wrapper float_left">
@@ -323,7 +255,7 @@
                                  </span>
                             </div>
                             <div class="employ-icon-text">
-                                <a href="javascript:;">
+{{--                                <a href="{{route('/register')}}">--}}
                                     <h4>Register an Account</h4>
                                 </a>
                                 <p>Use the upwork platform to chat, share files, and collaborate from your desktop or on the
@@ -424,77 +356,55 @@
             </div>
             <div class="latest-post-main-box float_left">
                 <div class="row">
-                    <div class="col-lg-6 col-md-12 col-12">
-                        <div class="post-picture float_left">
-                            <img src="{{asset('website/images/index2/vedio.png')}}" alt="img">
-                            <div class="vedio-text">
-                                <span>28 Feb 2022</span>
-                                <h4><a href="javascript:;">The New of Theater</a></h4>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:;"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> &nbsp;
-                                            120 Like </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;"><i class="fa fa-comments-o" aria-hidden="true"></i> &nbsp; 52
-                                            Comments </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="wrapper">
-                                <div class="waves-block">
-                                    <div class="waves wave-1"></div>
-                                    <div class="waves wave-2"></div>
-                                    <div class="waves wave-3"></div>
-                                </div>
-                            </div>
-                            <a class="play-btn" href="javascript:;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    @if($posts->isNotEmpty())
+                        @foreach($posts->take(2) as $post)
+                            <div class="col-lg-6 col-md-12 col-12">
+                                <div class="post-picture float_left mb-4">
+                                    <img src="{{ asset($post->photo) }}" alt="img">
 
-                                <img src="{{asset('website/images/index2/play.png')}}" alt="img">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-12">
-                        <div class="post-comment float_left">
-                            <div class="post-com-img">
-                                <img src="{{asset('website/images/index2/post.png')}}" alt="img">
-                            </div>
-                            <div class="post-com-text">
-                                <h4><a href="javascript:;">SEO Packages Offering</a></h4>
-                                <span>25 Feb 2022</span>
-                                <p>Lorem ipsum dolor sit amet,tuiradig elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                <div class="like">
-                                    <a href="javascript:;"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> &nbsp; 120
-                                        Like </a>
-                                    <a href="javascript:;"><i class="fa fa-comments-o" aria-hidden="true"></i> &nbsp; 12
-                                        Comments </a>
+                                    <span>{{ $post->created_at->format('d M Y') }}</span>
+                                    <h4>
+                                        <a href="{{ route('guest.posts.show', $post->id) }}">{{ $post->title }}</a>
+                                    </h4>
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> &nbsp;
+                                                {{ $post->is_liked ? 'Liked' : 'Like' }}
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-comments-o" aria-hidden="true"></i> &nbsp;
+                                                {{ $post->comments->count() }} Comments
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    @foreach($post->comments as $comment)
+                                        <div class="comment-box mt-2">
+                                            <p><strong>{{ $comment->user->name ?? 'Guest' }}</strong></p>
+                                            <p>{{ $comment->content }}</p>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
-                        </div>
-                        <div class="post-comment float_left mt-4">
-                            <div class="post-com-img">
-                                <img src="{{asset('website/images/index2/post.png')}}" alt="img">
-                            </div>
-                            <div class="post-com-text">
-                                <h4><a href="javascript:;">Freelance Writer</a></h4>
-                                <span>28 Feb 2022</span>
-                                <p>Lorem ipsum dolor sit amet,tuiradig elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                <div class="like">
-                                    <a href="javascript:;"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> &nbsp; 120
-                                        Like </a>
-                                    <a href="javascript:;"><i class="fa fa-comments-o" aria-hidden="true"></i> &nbsp; 52
-                                        Comments </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @else
+                        <p>No posts available.</p>
+                    @endif
                 </div>
-                <div class="center-btn float_left">
-                    <a href="javascript;;"> <span>Read More</span> </a>
+
+                <div class="center-btn float_left mt-5">
+                    <a href="{{ route('guest.posts.index') }}">
+                        <span>Read More</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+
+
     <div class="client-say-wrapper float_left ptb-100">
         <div class="container">
             <div class="row">

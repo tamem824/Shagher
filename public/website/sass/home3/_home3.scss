@@ -60,10 +60,10 @@
 
 // service section start
 .service-section3 {
-	
+
 }
 
-// about section css 
+// about section css
 .about-main-wrapper3 {
 	h4 {
 		font-weight: $font-weight1;
@@ -223,7 +223,7 @@
 	}
 }
 
-// counter section css 
+// counter section css
 .counter-main3 {
 	background-image: url('../images/home3/counter3-bg.jpg');
 	&:after {
@@ -336,7 +336,7 @@
 
 
 .index1-slider-wrapper{
-	background-image: url(../images/banner.jpg);
+	background-image: url(../../images/banner.jpg);
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -375,7 +375,7 @@
     							li{
     								width: 70%;
     								.text-field{
-    									margin: 6px; 
+    									margin: 6px;
     									position: relative;
     									input{
     										width: 100%;
@@ -387,7 +387,7 @@
     									}
     								}
     								.select-field{
-    									margin: 6px; 
+    									margin: 6px;
     									position: relative;
     									select{
     										border-radius: 30px;
@@ -400,7 +400,7 @@
 										    appearance: none;
 										    line-height: 40px;
 										    padding: 0px 12px;
-										    	
+
     									}
     									&:after{
 								    		content: '';
@@ -446,7 +446,7 @@
 												transition-duration: 0.6s;
 												transform-origin: top left;
 												background: #0a3382;
-												
+
 												-webkit-transition: all 0.3s;
 												-moz-transition: all 0.3s;
 												-o-transition: all 0.3s;
@@ -524,7 +524,7 @@
 			    				}
 			    		}
 			    	}
-			    	
+
 			}
 			.tab-content{
 				margin-top: 30px;
@@ -576,7 +576,7 @@
 									    height: 94px;
 									    border-radius: 50%;
 									    position: absolute;
-									    
+
 							    	}
 							    	&:hover{
 							    		box-shadow: none;
@@ -1041,7 +1041,7 @@
     						p{
     							font-style: normal;
     						}
-    					}	
+    					}
 					}
 					&:hover{
 						border-color: $text-hover-color;
@@ -1053,7 +1053,7 @@
 										}
 									}
 							}
-					}		
+					}
 			}
 			.owl-nav{
 				display: none;
@@ -1171,7 +1171,7 @@
 										border-color: #eee9cd;
 										color: #ae9922;
 									}
-									
+
 							}
 							.heart{
 								line-height: 40px;
@@ -1300,9 +1300,9 @@
 	    						color: #fff;
 	    					}
 	    			}
-	    	}	
+	    	}
     	}
-    	
+
 }
 
 .pricing-main-wrapper{
@@ -1574,7 +1574,7 @@
 					}
 				}
 			}
-			
+
 			.img-overlay {
 				opacity: 1;
 				left: 0;
@@ -1582,16 +1582,16 @@
 				bottom: 0;
 				right: 0;
 			}
-			
+
 		}
-	}	
+	}
 }
 
 
 // ===============Listing Page===================
 
 .index1-listing-slider-wrapper{
-	background-image: url(../images/listing.jpg);
+	background-image: url(../../images/listing.jpg);
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1670,13 +1670,13 @@
 		    				}
 					}
 			}
-			
+
 		}
 		.menu-fixed{
 			background-color: #cee3fd;
 		}
 	}
-	
+
 }
 
 .index2-slider-wrapper{
@@ -1847,7 +1847,7 @@
 				    background-image: linear-gradient(to right, #87aeff, #66bdff, #40cbff, #12d8ff, #03e3ff);
 				    border-radius: 50%;
 				    border: 7px solid #e0f2ff;
-				    
+
     					a{
     						display: inline-block;
     						text-align: center;
@@ -1898,7 +1898,7 @@
 		    bottom: -10px;
 		    left: 45%;
 		}
-		
+
 	}
 	.popular-category-main-box{
 		margin-top: 60px;
@@ -2006,7 +2006,7 @@
 		    bottom: -10px;
 		    left: 45%;
 		}
-		
+
 	}
 	.custom-pricing-wrapper{
 		.nav-pills{
@@ -2218,7 +2218,7 @@
 			}
 		}
 		}
-		
+
 	}
 	&:before{
 		content: '';
@@ -2278,7 +2278,7 @@
 		    bottom: -10px;
 		    left: 45%;
 		}
-		
+
 	}
 	.employe-job-box{
 		margin-top: 70px;
@@ -2404,7 +2404,7 @@
 		    bottom: -10px;
 		    left: 45%;
 		}
-		
+
 	}
 	.frrelncer-slider{
 		margin-top: 65px;
@@ -2591,7 +2591,7 @@
 		    bottom: -10px;
 		    left: 45%;
 		}
-		
+
 	}
 	.custom-package-tab{
 		margin-top: 70px;
@@ -2722,7 +2722,7 @@
 		    bottom: -10px;
 		    left: 0;
 		}
-		
+
 	}
 	.mobile-text{
 		margin-top: 45px;
@@ -2735,7 +2735,7 @@
 			display: inline-block;
 			margin-top: 20px;
 				li{
-					padding-bottom: 12px;	
+					padding-bottom: 12px;
 				}
 		}
 
@@ -2814,7 +2814,7 @@
 		    bottom: -10px;
 		    left: 45%;
 		}
-		
+
 	}
 	.latest-post-main-box{
 		margin-top: 75px;
@@ -2858,7 +2858,7 @@
 				    text-align: center;
 				    line-height: 84px;
 				    border-radius: 50px;
-				    	
+
 				}
 		}
 		.post-comment{
@@ -2979,7 +2979,7 @@
 		    bottom: -10px;
 		    left: 0;
 		}
-		
+
 	}
 	.heading-text{
 		max-width: 385px;
@@ -3172,7 +3172,7 @@
 		    bottom: -10px;
 		    left: 45%;
 		}
-		
+
 	}
 	.project-wrapper{
 		border: 1px solid #ccc;
@@ -3277,7 +3277,7 @@
     		background-color: transparent;
     		text-align: left;
     		border-top: 1px solid #111;
-    		
+
     			p{
     				color: #111;
     			}
@@ -3286,7 +3286,7 @@
     				text-align: right;
 					li {
 						display: inline-block;
-						
+
 						a {
 							display: inline-block;
 							border: 1px solid #111;

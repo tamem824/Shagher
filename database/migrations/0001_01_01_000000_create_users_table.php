@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('phone_number')->nullable();
             $table->string('photo')->nullable();
             $table->string('address')->nullable();
+            $table->tinyInteger('user_type')->default(0);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

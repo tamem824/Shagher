@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Experience;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -17,7 +18,7 @@ class Job extends Model
     protected $casts = [
         'gender' => \App\Gender::class,
         'qualification' => \App\Qualification::class,
-
+        'experience_years' => Experience::class,
         'responsibility' => 'array',
         'skill_experience' => 'array',
         'experience' => 'array',
@@ -28,6 +29,7 @@ class Job extends Model
     {
         return $this->belongsToMany(Tag::class, 'job_tag', 'job_id', 'tag_id');
     }
+
     public function career_level(): BelongsTo
     {
         return $this->belongsTo(Tag::class, 'career_level_id');
@@ -46,5 +48,11 @@ class Job extends Model
     public function company(): BelongsTo
     {
         return $this->belongsTo(Company::class, 'posted_by');
+    }
+
+    public function location(): BelongsTo
+    {
+        return $this->belongsTo(Location::class);
+
     }
 }

@@ -392,7 +392,7 @@
 				    	}
 				}
 			}
-			
+
 			.post-form-wrapper{
 				form{
 					h4{
@@ -439,7 +439,7 @@
 							    z-index: 1;
 					    	}
 						}
-						
+
 						.file-doc{
 							border: none;
 							padding: 0;
@@ -453,7 +453,7 @@
 							border: 1px solid #ccc;
 							border-radius: 8px;
 							padding: 10px 24px;
-							
+
 						}
 					}
 					.budget_input_wrap{
@@ -1779,7 +1779,7 @@
 						transition-duration: 0.6s;
 						transform-origin: top left;
 						background-color: #fff;
-						
+
 						-webkit-transition: all 0.3s;
 						-moz-transition: all 0.3s;
 						-o-transition: all 0.3s;
@@ -1787,7 +1787,7 @@
 			    	}
 			    	&:hover{
 			    		border: 1px solid #0060aa;
-			    		
+
 			    		span{
 			    			z-index: 11;
 			    			position: relative;
@@ -2385,7 +2385,7 @@
 					    height: 94px;
 					    border-radius: 50%;
 					    position: absolute;
-					    
+
 			    	}
 			    	&:hover{
 			    		box-shadow: none;
@@ -2433,7 +2433,7 @@
 			    width: 50%;
 			    text-align: center;
 			    line-height: 40px;
-			    
+
 	    		border: 1px solid $text-hover-color;
 	    		color: $text-hover-color;
 			    padding: 0px 30px;
@@ -2489,7 +2489,7 @@
 }
 
 .freelauncer-slider-wrapper {
-	background-image: url(../images/frelauncer-slide.jpg);
+	background-image: url(../../images/frelauncer-slide.jpg);
 	background-position: top center;
 	background-size: cover;
 	background-repeat: no-repeat;

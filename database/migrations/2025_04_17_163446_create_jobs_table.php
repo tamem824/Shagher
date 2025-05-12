@@ -19,10 +19,12 @@ return new class extends Migration
             $table->foreignIdFor(Category::class);
             $table->foreignId('tag_id')->constrained('tags');
             $table->foreignIdFor(User::class,'posted_by');
+            $table->foreignId('location_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->text('description');
             $table->string('salary');
             $table->date('start_date');
+            $table->tinyInteger('experience_years');
             $table->date('expiration_date');
             $table->tinyInteger('gender')->nullable();
             $table->tinyInteger('qualification');

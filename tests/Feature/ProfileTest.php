@@ -17,14 +17,14 @@ test('profile information can be updated', function () {
 
     $response = $this
         ->actingAs($user)
-        ->patch('/profile', [
+        ->patch('company.profile', [
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
 
     $response
         ->assertSessionHasNoErrors()
-        ->assertRedirect('/profile');
+        ->assertRedirect('company.profile');
 
     $user->refresh();
 
