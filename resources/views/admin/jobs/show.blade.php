@@ -65,7 +65,7 @@
                 <div>
                     <strong class="text-sm font-medium text-gray-700 dark:text-gray-300">Responsibilities:</strong>
                     <ul class="list-disc pl-5 text-gray-600 dark:text-gray-400">
-                        @foreach(json_decode($job->responsibility) as $responsibility)
+                        @foreach(($job->responsibility) as $responsibility)
                             <li>{{ $responsibility }}</li>
                         @endforeach
                     </ul>
@@ -74,7 +74,7 @@
                 <div>
                     <strong class="text-sm font-medium text-gray-700 dark:text-gray-300">Skills & Experience:</strong>
                     <ul class="list-disc pl-5 text-gray-600 dark:text-gray-400">
-                        @foreach(json_decode($job->skill_experience) as $skill)
+                        @foreach(($job->skill_experience) as $skill)
                             <li>{{ $skill }}</li>
                         @endforeach
                     </ul>
@@ -83,7 +83,7 @@
                 <div>
                     <strong class="text-sm font-medium text-gray-700 dark:text-gray-300">Experience:</strong>
                     <ul class="list-disc pl-5 text-gray-600 dark:text-gray-400">
-                        @foreach(json_decode($job->experience) as $exp)
+                        @foreach(($job->experience) as $exp)
                             <li>{{ $exp }}</li>
                         @endforeach
                     </ul>

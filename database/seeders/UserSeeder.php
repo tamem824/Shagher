@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Gender;
+use App\Models\Company;
 use App\Models\User;
 use App\RuleEnums;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -33,14 +34,19 @@ class UserSeeder extends Seeder
             'phone_number' => ('09########'),
 
         ]);
-        User::create([
+        $user = User::create([
             'name' => 'Company',
             'email' => 'company@example.com',
             'password' => bcrypt('password'),
             'gender' => Gender::Male,
             'user_type' => RuleEnums::Company,
-            'phone_number' => ('09########'),
+            'phone_number' => '0999999999',
+        ]);
 
+        Company::create([
+            'user_id' => $user->id,
+            'uri' => 'company-profile',
+            'is_approved' => true,
         ]);
     }
 }

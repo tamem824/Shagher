@@ -11,16 +11,15 @@ class CompanySeeder extends Seeder
     public function run(): void
     {
 
-        if (User::count() === 0) {
-            \App\Models\User::factory()->count(5)->create();
-        }
+        $users = User::factory()->count(10)->create([
+            'user_type' => 1,
+        ]);
 
-
-        foreach (User::all() as $user) {
+        foreach ($users as $index => $user) {
             Company::create([
                 'user_id' => $user->id,
                 'uri' => 'company-' . $user->id,
-                'is_approved' => true,
+                'is_approved' => $index < 5,
             ]);
         }
     }

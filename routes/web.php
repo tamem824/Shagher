@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\JobController;
@@ -33,8 +34,13 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', CheckUserStatus::cla
     Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->name('jobs.edit');
     Route::put('/jobs/{job}', [JobController::class, 'update'])->name('jobs.update');
     Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->name('jobs.destroy');
+    Route::get('companies',[AdminController::class,'index'])->name('companies.index');
+    Route::get('companies/{company}', [AdminController::class, 'show'])->name('companies.show');
+    Route::patch('companies/{company}/approve', [AdminController::class, 'approve'])->name('companies.approve');
+    Route::patch('companies/{company}/reject', [AdminController::class, 'reject'])->name('companies.reject');
 
-    });
+
+});
 
 
 
@@ -76,8 +82,8 @@ Route::prefix('company')->name('company.')->middleware(['auth'])->group(function
     Route::get('profile.edit',[CompanyController::class,'edit'])->name('profile.edit');
     Route::put('profile.update', [CompanyController::class, 'update'])->name('profile.update');
     Route::get('jobs{job}', [CompanyController::class, 'show'])->name('jobs.show');
-    Route::get('jobs.{job}/edit', [CompanyController::class, 'edit'])->name('jobs.edit');
-    Route::put('jobs.{job}', [CompanyController::class, 'update'])->name('jobs.update');
+    Route::get('jobs.{job}/edit', [CompanyController::class, 'editJob'])->name('jobs.edit');
+    Route::put('jobs.{job}', [CompanyController::class, 'updateJob'])->name('jobs.update');
     Route::delete('.jobs.{job}', [CompanyController::class, 'destroy'])->name('jobs.destroy');
 });
 

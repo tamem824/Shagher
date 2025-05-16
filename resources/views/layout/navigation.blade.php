@@ -18,6 +18,7 @@
                     <x-nav-link href="{{ route('admin.categories.index') }}" :active="request()->routeIs('admin.categories.index')" >Category </x-nav-link>
                     <x-nav-link href="{{ route('admin.tags.index') }}" :active="request()->routeIs('admin.tags.index')">Tag </x-nav-link>
                     <x-nav-link href="{{ route('admin.jobs.index') }}" :active="request()->routeIs('admin.jobs.index')">Job</x-nav-link>
+                    <x-nav-link href="{{ route('admin.companies.index') }}" :active="request()->routeIs('admin.companies.index')">Companies</x-nav-link>
 
                 </div>
             </div>

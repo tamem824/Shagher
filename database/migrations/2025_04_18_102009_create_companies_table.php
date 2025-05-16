@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(User::class);
             $table->string('uri')->nullable();
             $table->boolean('is_approved');
+            $table->text('reject_reason')->nullable()->after('is_approved');
             $table->timestamps();
         });
     }

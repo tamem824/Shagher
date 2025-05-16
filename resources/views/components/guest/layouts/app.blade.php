@@ -77,7 +77,7 @@
                                                 </li>
                                             @endforeach
                                             <li>
-                                                <a href="{{ route('guest.categories.index') }}" > All Categories</a>
+                                                <a href="{{ route('guest.categories.index') }}"> All Categories</a>
                                             </li>
                                         @else
                                             <li>No categories available</li>
@@ -104,46 +104,49 @@
                                     <li class="nav-item">
                                         <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                                             @csrf
-                                            <button type="submit" class="nav-link btn btn-link" style="padding: 0; margin: 0;">Logout</button>
+                                            <button type="submit" class="nav-link btn btn-link"
+                                                    style="padding: 0; margin: 0;">Logout
+                                            </button>
                                         </form>
                                     </li>
                                 @endauth
                             </ul>
 
                         </nav>
+                        @auth
+                            @if(auth()->user()->user_type === \App\RuleEnums::Company->value)
+                                @if(optional(auth()->user()->company)->is_approved)
+                                    <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons">
+                                        <li class="post-drop">
+                                            <a class="post-btn" href="javascript:;" aria-label="Post a Job">
+                                                <span>Post Now &nbsp;</span>
+                                            </a>
+                                            <div class="post-page-wrapper">
+                                                <a href="{{ route('guest.jobs.create') }}">Post a Job</a>
+                                                <a href="{{ route('company.profile') }}" class="btn btn-outline-primary btn-sm">
+                                                    <i class="bi bi-person-circle me-1"></i> Company Profile
+                                                </a>
 
-                        <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons">
-                            <li>
-                                <div class="search_bar hidden-xs">
-                                    <div class="lv_search_bar" id="search_button">
-                                        <a href="javascript:;">
-                                            <span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                                                    <g>
-                                                        <path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848S326.847,409.323,225.474,409.323z"></path>
-                                                    </g>
-                                                    <g>
-                                                        <path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"></path>
-                                                    </g>
-                                                </svg>
-                                            </span>
-                                        </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                @else
+                                    <div class="alert alert-warning alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                                             width="20" height="20" fill="currentColor" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                                            <path
+                                                d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.707c.89 0 1.438-.99.982-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1-2.002 0 1 1 0 0 1 2.002 0z"/>
+                                        </svg>
+                                        <div>
+                                            Your company is not yet approved to post jobs. Please wait for admin approval.
+                                        </div>
+                                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
-                                    <div id="search_open" class="lv_search_box" style="display: none;">
-                                        <input type="text" placeholder="Search here">
-                                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="post-drop">
-                                <a class="post-btn" href="javascript:;" aria-label="Post a Job">
-                                    <span>Post Now &nbsp;</span>
-                                </a>
-                                <div class="post-page-wrapper">
-                                    <a href="{{ route('guest.jobs.create') }}">Post a Job</a>
-                                </div>
-                            </li>
-                        </ul>
+                                @endif
+                            @endif
+                        @endauth
+
+
                     </div>
                 </div>
             </div>
@@ -184,10 +187,12 @@
                                                     <span>
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                             <g>
-                                                                <path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848S326.847,409.323,225.474,409.323z"></path>
+                                                                <path
+                                                                    d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848S326.847,409.323,225.474,409.323z"></path>
                                                             </g>
                                                             <g>
-                                                                <path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"></path>
+                                                                <path
+                                                                    d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"></path>
                                                             </g>
                                                         </svg>
                                                     </span>

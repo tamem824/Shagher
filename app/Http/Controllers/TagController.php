@@ -54,10 +54,14 @@ class TagController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
+            'types' => 'required|array',
+            'types.*' => 'string',
         ]);
 
         $tag->update([
             'name' => $request->name,
+            'types' => $request->types,
+
         ]);
 
         return redirect()->route('admin.tags.index');
