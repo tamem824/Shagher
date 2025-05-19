@@ -2,11 +2,13 @@
 
 namespace Database\Factories;
 
+use App\Experience;
 use App\Gender;
 use App\JobStatus;
 use App\Models\Job;
 use App\Models\JobListing;
 use App\Models\Category;
+use App\Models\Location;
 use App\Models\Tag;
 use App\Models\Company;
 use App\Models\User;
@@ -24,10 +26,12 @@ class JobFactory extends Factory
             'tag_id' => Tag::factory(),
             'posted_by' => User::factory(),
             'title' => $this->faker->jobTitle(),
+            'location_id'=>Location::factory(),
             'description' => $this->faker->paragraphs(3, true),
             'salary' => $this->faker->randomElement(['Negotiable', '$1000 - $2000', '$2000+']),
             'start_date' => $this->faker->date(),
             'expiration_date' => $this->faker->dateTimeBetween('+1 week', '+2 months')->format('Y-m-d'),
+            'experience_years'=>$this->faker->randomElement(Experience::cases()),
             'gender' => $this->faker->randomElement([Gender::Male, Gender::Female]),
             'qualification' => $this->faker->randomElement(Qualification::cases()),
             'career_level_id' => Tag::factory(),

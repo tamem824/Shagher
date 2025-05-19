@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,21 +12,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-        {
-            User::create([
-                'name'=>'admin',
-                'email'=>'admin2@example.com',
-                'phone_number'=>'0000000000',
-                'address'=>"sss",
-                'gender'=>1,
-                'photo'=>'sad.pnj',
-                'password'=>bcrypt('password')]);
-        }
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        DB::statement('PRAGMA foreign_keys = OFF;');
+
+        $this->call([
+            TagSeeder::class,
+            LocationSeeder::class,
+            UserSeeder::class,
+            CompanySeeder::class,
+            CategorySeeder::class,
+            JobSeeder::class,
         ]);
+
+
+        DB::statement('PRAGMA foreign_keys = ON;');
     }
 }

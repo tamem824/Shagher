@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Post::class);
-            $table->foreignIdFor(\App\Models\Comment::class,'comment_id')->nullable();
+            $table->unsignedBigInteger('comment_id')->nullable();
+            $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
             $table->text('content');
-            $table->text('replay')->nullable();
-            $table->boolean('is_liked');
+//            $table->text('replay')->nullable();
+            $table->boolean('is_liked')->default(false);
             $table->timestamps();
         });
     }

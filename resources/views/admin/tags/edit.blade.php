@@ -39,6 +39,19 @@
                                class="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-200 dark:bg-gray-700 dark:text-white">
                     </div>
 
+                    {{-- Types --}}
+                    <div>
+                        <label for="types" class="block font-medium text-gray-700 dark:text-gray-300">Types:</label>
+                        <select multiple name="types[]" id="types"
+                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm dark:bg-gray-800 dark:text-white">
+                            @foreach(\App\TagTable::casesWithLabels() as $type)
+                                <option value="{{ $type['value'] }}"
+                                    {{ in_array($type['value'], old('types', $tag->types ?? [])) ? 'selected' : '' }}>
+                                    {{ $type['label'] }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
 
                     <div>
                         <button type="submit"

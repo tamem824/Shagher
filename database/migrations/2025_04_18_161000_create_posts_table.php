@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,8 +15,9 @@ return new class extends Migration
             $table->foreignIdFor(\App\Models\User::class);
             $table->string('title');
             $table->text('description');
-            $table->string('photo');
-            $table->boolean('is_liked');
+            $table->string('photo')->nullable();
+            $table->boolean('is_liked')->default(false);
+            $table->string('video_url')->nullable();
             $table->timestamps();
         });
     }

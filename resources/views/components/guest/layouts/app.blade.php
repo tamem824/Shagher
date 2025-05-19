@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" class="ie8 no-js">
-<![endif]-->
-<!--[if IE 9]>
-<html lang="en" class="ie9 no-js">
-<![endif]-->
-<!--[if !IE]><!-->
-<html lang="zxx" dir="ltr">
-<!--[endif]-->
+@props(['categories'])
+<html lang="en">
+
 <head>
     <meta charset="utf-8"/>
     <title>Shager</title>
@@ -30,7 +24,7 @@
 <body>
 <div id="preloader">
     <div id="status">
-                          <img src="{{ asset('website/images/preloader.svg')}}" id="preloader_image" alt="loader">
+        <img src="{{ asset('website/images/preloader.svg')}}" id="preloader_image" alt="loader">
     </div>
 </div>
 <!-- top to return -->
@@ -43,288 +37,170 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-6">
                         <div class="index1-logo">
-                            <a href="#">
-                                <img src="{{ asset('website/images/logo.png')}}" alt="logo" width="100px">
+                            <a href="{{ route('guest.home.index') }}">
+                                <img src="{{ asset('website/images/Logo.png') }}" alt="logo" width="100px">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-10 col-md-6 custom-header">
                         <nav class="navbar navbar-expand-lg">
                             <ul class="navbar-nav">
+                                <!-- Home Section -->
                                 <li class="nav-item menu-click5 ps-rel">
-                                    <a class="nav-link" href="{{ asset('website/javascript:;')}}">Home <span><i
-                                                class="fas fa-chevron-down"></i></span></a>
-                                    <ul class="dropdown-items menu-open5">
-                                        <li><a href="index.html">Index 01</a></li>
-                                        <li><a href="index2.html">Index 02</a></li>
-                                        <li><a href="index3.html">Index 03</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item menu-click3 ps-rel">
-                                    <a class="nav-link" href="{{ asset('website/javascript:;')}}">Jobs <span><i
-                                                class="fas fa-chevron-down"></i></span></a>
-                                    <ul class="dropdown-items menu-open3">
-                                        <li><a href="jobs-listing-right-sidebar.html">Job Listing Right Sidebar</a></li>
-                                        <li><a href="jobs-listing-left-sidebar.html"> Job Listing Left Sidebar</a></li>
-                                        <li><a href="jobs-listing-3-column.html"> Job Listing 3 Colum</a></li>
-                                        <li><a href="jobs-listing-4-column.html"> Job Listing 4 Colum</a></li>
-                                        <li><a href="jobs-details.html"> Job Details</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item menu-click ps-rel">
-                                    <a class="nav-link" href="{{ asset('website/javascript:;')}}">Services
-                                        <span><i class="fas fa-chevron-down"></i></span>
+                                    <a class="nav-link" href="{{ route('guest.home.index') }}">
+                                        Home
                                     </a>
-                                    <ul class="dropdown-items menu-open">
-                                        <li>
-                                            <a href="{{ asset('website/javascript:')}};">Freelancer <span><i class="fas fa-chevron-right"></i></span></a>
-                                            <ul class="sub-dropdown">
-                                                <li><a href="freelancer-listing-right-sidebar.html">Freelancer Listing
-                                                        Right Sidebar</a></li>
-                                                <li><a href="freelancer-listing-left-sidebar.html">Freelancer Listing
-                                                        Left Sidebar</a></li>
-                                                <li><a href="freelancer-listing-3-column.html">Freelancer 3 Colum</a>
-                                                </li>
-                                                <li><a href="freelancer-listing-4-column.html">Freelancer 4 Colum</a>
-                                                </li>
-                                                <li><a href="freelacing-details.html">Freelancer Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="{{ asset('website/javascript:')}};">Employers <span><i class="fas fa-chevron-right"></i></span></a>
-                                            <ul class="sub-dropdown">
-                                                <li><a href="company-listing-right-sidebar.html">Company Listing Right
-                                                        Sidebar</a></li>
-                                                <li><a href="company-listing-left-sidebar.html">Company Listing Left
-                                                        Sidebar</a></li>
-                                                <li><a href="company-listing-3-column.html">Company Listing 3 Colum</a>
-                                                </li>
-                                                <li><a href="company-listing-4-column.html">Company Listing 4 Colum</a>
-                                                </li>
-                                                <li><a href="company-details.html">Company Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="{{ asset('website/javascript:')}};">Project <span><i
-                                                        class="fas fa-chevron-right"></i></span></a>
-                                            <ul class="sub-dropdown">
-                                                <li><a href="project-listing-right-sidebar.html">Project Listing Right
-                                                        Sidebar</a></li>
-                                                <li><a href="project-listing-left-sidebar.html">Project Listing Left
-                                                        Sidebar</a></li>
-                                                <li><a href="project-listing-3-column.html">Project Listing 3 Colum</a>
-                                                </li>
-                                                <li><a href="project-listing-4-column.html">Project Listing 4 Colum</a>
-                                                </li>
-                                                <li><a href="project-details.html">Project Details</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
                                 </li>
-                                <li class="nav-item menu-click1 ps-rel">
-                                    <a class="nav-link" href="{{ asset('website/javascript:;')}}">Pages
-                                        <span><i class="fas fa-chevron-down"></i></span>
-                                    </a>
-                                    <ul class="dropdown-items menu-open1">
-                                        <li><a href="post-jobs.html">Post A Job</a></li>
-                                        <li><a href="contact-us.html">Contact Us</a></li>
-                                        <li><a href="support.html">Get Support</a></li>
-                                        <li><a href="sign-up.html">Sign Up</a></li>
-                                        <li><a href="login.html">Login</a></li>
 
-                                        <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                                        <li><a href="terms-service.html">Terms Of Service</a></li>
+                                <!-- Jobs Section -->
+                                <li class="nav-item menu-click3 ps-rel">
+                                    <a class="nav-link" href="javascript:;">
+                                        Jobs
+                                    </a>
+                                    <ul class="dropdown-items menu-open3">
+                                        <li><a href="{{ route('guest.jobs.index') }}">Job Details</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item menu-click4 ps-rel">
-                                    <a class="nav-link" href="{{ asset('website/javascript:;')}}">Shortcodes
-                                        <span><i class="fas fa-chevron-down"></i></span>
-                                    </a>
-                                    <div class="dropdown-items menu-open4">
-                                        <div class="megamenu-wrapper">
-                                            <div class="megamenu-list">
-                                                <h5>Shortcode (1)</h5>
-                                                <a href="accordion.html">Accordian</a>
-                                                <a href="client.html">Client</a>
-                                                <a href="counter.html">Counter</a>
-                                                <a href="form.html">Form</a>
-                                                <a href="gallery.html">Gallery</a>
-                                            </div>
-                                            <div class="megamenu-list">
-                                                <h5>Shortcode (2)</h5>
-                                                <a href="alert.html">Alert</a>
-                                                <a href="icon.html">Icon</a>
-                                                <a href="list.html">List</a>
-                                                <a href="pricing.html">Pricing</a>
-                                                <a href="social-icon.html">Social Icon</a>
-                                            </div>
-                                            <div class="megamenu-list">
-                                                <h5>Shortcode (3)</h5>
-                                                <a href="button.html">Button</a>
-                                                <a href="tab.html">Tabs</a>
-                                                <a href="team.html">Team</a>
-                                                <a href="testimonial.html">Testimonial</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+
+                                <!-- Category Section -->
                                 <li class="nav-item menu-click2 ps-rel">
-                                    <a class="nav-link" href="{{ asset('website/javascript:;')}}">Blog
-                                        <span><i class="fas fa-chevron-down"></i></span>
+                                    <a class="nav-link" href="javascript:;">
+                                        Category
                                     </a>
                                     <ul class="dropdown-items menu-open2">
-                                        <li>
-                                            <a href="{{ asset('website/javascript:;')}}">Blog Category <span><i
-                                                        class="fas fa-chevron-right"></i></span></a>
-                                            <ul class="sub-dropdown">
-                                                <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                                <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                                <li><a href="blog-without-sidebar.html">Blog Without Sidebar</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="{{ asset('website/javascript:;')}}"> Blog Single <span><i
-                                                        class="fas fa-chevron-right"></i></span></a>
-                                            <ul class="sub-dropdown">
-                                                <li><a href="blog-single-right-sidebar.html">Blog Single Right
-                                                        Sidebar</a></li>
-                                                <li><a href="blog-single-left-sidebar.html">Blog Single Left Sidebar</a>
+                                        @if($categories->isNotEmpty())
+                                            @foreach($categories as $category)
+                                                <li>
+                                                    <a href="{{ route('guest.categories.show', $category->id) }}">
+                                                        {{ $category->name }}
+                                                    </a>
                                                 </li>
-                                                <li><a href="blog-single-without-sidebar.html">Blog Single Without
-                                                        Sidebar</a></li>
-                                            </ul>
-                                        </li>
+                                            @endforeach
+                                            <li>
+                                                <a href="{{ route('guest.categories.index') }}"> All Categories</a>
+                                            </li>
+                                        @else
+                                            <li>No categories available</li>
+                                        @endif
                                     </ul>
                                 </li>
+
+                                <!-- Contact Us -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact-us.html">Contact Us</a>
+                                    <a class="nav-link" href="{{ route('guest.contact') }}">Contact Us</a>
                                 </li>
+
+                                <!-- Auth Links -->
+                                @guest
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                    </li>
+                                @endguest
+
+                                @auth
+                                    <li class="nav-item">
+                                        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                            @csrf
+                                            <button type="submit" class="nav-link btn btn-link"
+                                                    style="padding: 0; margin: 0;">Logout
+                                            </button>
+                                        </form>
+                                    </li>
+                                @endauth
                             </ul>
+
                         </nav>
-                        <ul
-                            class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons">
-                            <li>
-                                <div class="search_bar hidden-xs">
-                                    <div class="lv_search_bar" id="search_button">
-                                        <a href="{{asset('website/javascript:;')}}">
-                                             <span>
-                                                <svg version="1.1" id="Capa_10" xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
-                                                     style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                                                   <g>
-                                                      <g>
-                                                         <path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474
-                                                            c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323
-                                                            c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848
-                                                            S326.847,409.323,225.474,409.323z"></path>
-                                                      </g>
-                                                   </g>
-                                                   <g>
-                                                      <g>
-                                                         <path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328
-                                                            c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"></path>
-                                                      </g>
-                                                   </g>
-                                                </svg>
-                                             </span>
-                                        </a>
+                        @auth
+                            @if(auth()->user()->user_type === \App\RuleEnums::Company->value)
+                                @if(optional(auth()->user()->company)->is_approved)
+                                    <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons">
+                                        <li class="post-drop">
+                                            <a class="post-btn" href="javascript:;" aria-label="Post a Job">
+                                                <span>Post Now &nbsp;</span>
+                                            </a>
+                                            <div class="post-page-wrapper">
+                                                <a href="{{ route('guest.jobs.create') }}">Post a Job</a>
+                                                <a href="{{ route('company.profile') }}" class="btn btn-outline-primary btn-sm">
+                                                    <i class="bi bi-person-circle me-1"></i> Company Profile
+                                                </a>
+
+                                            </div>
+                                        </li>
+                                    </ul>
+                                @else
+                                    <div class="alert alert-warning alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                                             width="20" height="20" fill="currentColor" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                                            <path
+                                                d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.707c.89 0 1.438-.99.982-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1-2.002 0 1 1 0 0 1 2.002 0z"/>
+                                        </svg>
+                                        <div>
+                                            Your company is not yet approved to post jobs. Please wait for admin approval.
+                                        </div>
+                                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
                                     </div>
-                                    <div id="search_open" class="lv_search_box" style="display: none;">
-                                        <input type="text" placeholder="Search here">
-                                        <button><i class="fa fa-search" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="post-drop">
-                                <a class="post-btn" href="{{ asset('website/javascript:;')}}">
-                                       <span>
-                                          <!-- <i class="fas fa-plus-circle"></i>   --> Post Now &nbsp; <i
-                                               class="fas fa-chevron-down"></i>
-                                       </span>
-                                </a>
-                                <div class="post-page-wrapper">
-                                    <a href="post-jobs.html">Post a Job</a>
-                                    <a href="post-project.html">Post a Project</a>
-                                </div>
-                            </li>
-                        </ul>
+                                @endif
+                            @endif
+                        @endauth
+
+
                     </div>
                 </div>
             </div>
         </div>
-        <!-- responsive menu bar start -->
+
+        <!-- Responsive Menu Start -->
         <div class="mobile-menu-wrapper d-xl-none d-lg-none d-md-block d-sm-block">
             <div class="container">
                 <div class="row">
-                    <div class=" col-md-4 col-sm-4 col-4">
+                    <div class="col-md-4 col-sm-4 col-4">
                         <div class="mobile-logo">
-                            <a href="">
-                                <img src="{{ asset('website/images/index1-logo.png')}}" alt="logo">
+                            <a href="{{ route('guest.home.index') }}">
+                                <img src="{{ asset('website/images/index1-logo.png') }}" alt="logo">
                             </a>
                         </div>
                     </div>
                     <div class="col-md-8 col-sm-8 col-8">
-                        <div class="d-flex  justify-content-end">
+                        <div class="d-flex justify-content-end">
                             <div class="social-media-icons">
                                 <ul>
                                     <li class="login-btn">
-                                        <a href="{{ asset('website/javascript:;')}}"><i class="fa fa-user-o" aria-hidden="true"></i></a>
+                                        <a href="javascript:;">
+                                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                                        </a>
                                         <div class="user-text">
-                                            <a href="login.html">
-                                                <span>
-                                                   <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
-                                                        viewBox="0 0 16 16">
-                                                      <path
-                                                          d="M10.95 15.84h-11V.17h11v3.88h-1V1.17h-9v13.67h9v-2.83h1v3.83z"></path>
-                                                      <path d="M5 8h6v1H5zM11 5.96l4.4 2.54-4.4 2.54V5.96z"></path>
-                                                   </svg>
-                                                </span>
+                                            <a href="{{ route('login') }}">
                                                 Login
                                             </a>
-                                            <a href="sign-up.html">
-                                                <span>
-                                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
-                                                        style="enable-background:new 0 0 32 32" xml:space="preserve">
-                                                      <path
-                                                          d="M16 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5zM23.942 32H8.058A4.062 4.062 0 0 1 4 27.942c0-6.616 5.383-12 12-12s12 5.384 12 12A4.062 4.062 0 0 1 23.942 32zM16 17.942c-5.514 0-10 4.486-10 10A2.06 2.06 0 0 0 8.058 30h15.884A2.06 2.06 0 0 0 26 27.942c0-5.514-4.486-10-10-10z"></path>
-                                                   </svg>
-                                                </span>
-                                                Sing Up
+                                            <a href="{{ route('register') }}">
+                                                Sign Up
                                             </a>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="search_bar hidden-xs">
                                             <div class="lv_search_bar" id="search_button1">
-                                                <a href="{{ asset('website/javascript:;')}}">
-                                                   <span>
-                                                      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
-                                                           xmlns:xlink="http://www.w3.org/1999/xlink"
-                                                           viewBox="0 0 512 512"
-                                                           style="enable-background:new 0 0 512 512;"
-                                                           xml:space="preserve">
-                                                         <g>
+                                                <a href="javascript:;">
+                                                    <span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                             <g>
-                                                               <path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474
-                                                                  c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323
-                                                                  c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848
-                                                                  S326.847,409.323,225.474,409.323z"></path>
+                                                                <path
+                                                                    d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848S326.847,409.323,225.474,409.323z"></path>
                                                             </g>
-                                                         </g>
-                                                         <g>
                                                             <g>
-                                                               <path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328
-                                                                  c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"></path>
+                                                                <path
+                                                                    d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"></path>
                                                             </g>
-                                                         </g>
-                                                      </svg>
-                                                   </span>
+                                                        </svg>
+                                                    </span>
                                                 </a>
                                             </div>
                                             <div id="search_open1" class="lv_search_box" style="display: none;">
                                                 <input type="text" placeholder="Search here">
-                                                <button><i class="fa fa-search" aria-hidden="true"></i>
-                                                </button>
+                                                <button><i class="fa fa-search" aria-hidden="true"></i></button>
                                             </div>
                                         </div>
                                     </li>
@@ -344,112 +220,53 @@
         </div>
         <div id="sidebar">
             <div class="sidebar_logo">
-                <a href="index.html"><img src="{{asset('website/images/index1-logo.png')}}" alt="logo"></a>
+                <a href="{{ route('guest.home.index') }}">
+                    <img src="{{ asset('website/images/index1-logo.png') }}" alt="logo">
+                </a>
             </div>
             <div id="toggle_close">&times;</div>
             <div id='cssmenu'>
                 <ul class="float_left">
                     <li class="has-sub">
-                        <a href="">Home</a>
-                        <ul>
-                            <li><a href="index.html">Index 01</a></li>
-                            <li><a href="index2.html"> Index 02</a></li>
-                            <li><a href="index3.html"> Index 03</a></li>
-                        </ul>
+                        <a href="{{ route('guest.home.index') }}">Home</a>
                     </li>
                     <li class="has-sub">
-                        <a href="">Job</a>
-                        <ul>
-                            <li><a href="jobs-listing-right-sidebar.html">Job Listing Right Sidebar</a></li>
-                            <li><a href="jobs-listing-left-sidebar.html"> Job Listing Left Sidebar</a></li>
-                            <li><a href="jobs-listing-3-column.html"> Job Listing 3 Colum</a></li>
-                            <li><a href="jobs-listing-4-column.html"> Job Listing 4 Colum</a></li>
-                            <li><a href="jobs-details.html"> Job Details</a></li>
-                        </ul>
+                        <a href="{{ route('guest.jobs.index') }}">Job</a>
                     </li>
-                    <li class="has-sub">
-                        <a href="{{ asset('website/javascript:;')}}">Service</a>
-                        <ul>
-                            <li class="has-sub">
-                                <a class="sub-icon">Freelancer</a>
-                                <ul class="m-sub-dropdown">
-                                    <li><a href="freelancer-listing-right-sidebar.html">Freelancer Listing Right
-                                            Sidebar</a></li>
-                                    <li><a href="freelancer-listing-left-sidebar.html">Freelancer Listing Left
-                                            Sidebar</a></li>
-                                    <li><a href="freelancer-listing-3-column.html">Freelancer 3 Colum</a></li>
-                                    <li><a href="freelancer-listing-4-column.html">Freelancer 4 Colum</a></li>
-                                    <li><a href="freelacing-details.html">Freelancer Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-sub">
-                                <a class="sub-icon">Employers</a>
-                                <ul class="m-sub-dropdown">
-                                    <li><a href="company-listing-right-sidebar.html">Company Listing Right Sidebar</a>
-                                    </li>
-                                    <li><a href="company-listing-left-sidebar.html">Company Listing Left Sidebar</a>
-                                    </li>
-                                    <li><a href="company-listing-3-column.html">Company Listing 3 Colum</a></li>
-                                    <li><a href="company-listing-4-column.html">Company Listing 4 Colum</a></li>
-                                    <li><a href="company-details.html">Company Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-sub">
-                                <a class="sub-icon">Project</a>
-                                <ul class="m-sub-dropdown">
-                                    <li><a href="project-listing-right-sidebar.html">Project Listing Right Sidebar</a>
-                                    </li>
-                                    <li><a href="project-listing-left-sidebar.html">Project Listing Left Sidebar</a>
-                                    </li>
-                                    <li><a href="project-listing-3-column.html">Project Listing 3 Colum</a></li>
-                                    <li><a href="project-listing-4-column.html">Project Listing 4 Colum</a></li>
-                                    <li><a href="project-details.html">Project Details</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-sub">
-                        <a href="{{ asset('website/javascript:;')}}">Pages</a>
-                        <ul>
-                            <li><a href="post-jobs.html">Post A Job</a></li>
-                            <li><a href="post-project.html">Post A Project</a></li>
-                            <li><a href="contact-us.html">Contact Us</a></li>
-                            <li><a href="support.html">Get Support</a></li>
-                            <li><a href="sign-up.html">Sign Up</a></li>
-                            <li><a href="login.html">Login</a></li>
 
-                            <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-service.html">Terms Of Service</a></li>
-                        </ul>
-                    </li>
                     <li class="has-sub">
-                        <a href="{{ asset('website/javascript:;')}}">Blog</a>
+                        <a href="javascript:;">Category</a>
                         <ul>
                             <li class="has-sub">
-                                <a class="sub-icon">Blog Category</a>
+                                <a class="sub-icon">All Categories</a>
                                 <ul class="m-sub-dropdown">
-                                    <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-without-sidebar.html">Blog Without Sidebar</a></li>
+                                    <li><a href="{{ route('guest.categories.index') }}">All Categories</a></li>
                                 </ul>
                             </li>
                             <li class="has-sub">
-                                <a class="sub-icon">Blog Single</a>
+                                <a class="sub-icon">Single Category</a>
                                 <ul class="m-sub-dropdown">
-                                    <li><a href="blog-single-right-sidebar.html">Blog Single Right Sidebar</a></li>
-                                    <li><a href="blog-single-left-sidebar.html">Blog Single Left Sidebar</a></li>
-                                    <li><a href="blog-single-without-sidebar.html">Blog Single Without Sidebar</a></li>
+                                    @foreach($categories as $category)
+                                        <li>
+                                            <a href="{{ route('guest.categories.show', $category->id) }}">
+                                                {{ $category->name }}
+                                            </a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
+
+                    <li>
+                        <a href="{{ route('guest.contact') }}">Contact Us</a>
+                    </li>
                 </ul>
             </div>
         </div>
-        <!-- responsive menu End -->
     </div>
 </div>
+
 
 {{$slot}}
 
@@ -460,14 +277,16 @@
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="sb-footer-section">
                     <div class="footer-logo">
-                        <a href="index.html"><img src="{{asset('website/images/index2/logo.png')}}" alt=""></a>
+                        <a href="{{ route('guest.home.index') }}">
+                            <img src="{{ asset('website/images/index2/logo.png') }}" alt="">
+                        </a>
                     </div>
-                    <p>Various versions have evolved over an the years, sometimes.</p>
+                    <p>Various versions have evolved over the years, sometimes.</p>
                     <ul>
-                        <li><a href="{{ asset('website/javascript:;')}}"><i class="fas fa-map-marker-alt"></i>
+                        <li><a href="javascript:;">
                                 125 / Tabula United States location sometimes.</a>
                         </li>
-                        <li><a href="{{ asset('website/javascript:')}}"><i class="fas fa-envelope"></i>
+                        <li><a href="javascript:;">
                                 tabula@example.com</a>
                         </li>
                         <li>
@@ -480,14 +299,8 @@
                 <div class="links">
                     <h4>Service</h4>
                     <ul>
-                        <li><a href="freelancer-listing-right-sidebar.html"><i class="fas fa-angle-right"></i>Freelancer</a>
-                        </li>
-                        <li><a href="company-listing-right-sidebar.html"><i class="fas fa-angle-right"></i>Employers</a>
-                        </li>
-                        <li><a href="project-listing-right-sidebar.html"><i class="fas fa-angle-right"></i>Project</a>
-                        </li>
-                        <li><a href="post-jobs.html"><i class="fas fa-angle-right"></i>Post a Job</a></li>
-                        <li><a href="post-project.html"><i class="fas fa-angle-right"></i>Post a Project</a></li>
+                        <li><a href="{{ route('guest.jobs.create') }}" {{-- Post a Job page --}}>
+                                Post a Job</a></li>
                     </ul>
                 </div>
             </div>
@@ -495,36 +308,36 @@
                 <div class="links">
                     <h4>Our Company</h4>
                     <ul>
-                        <li><a href="{{ asset('website/javascript:;')}}"><i class="fas fa-angle-right"></i>About Us</a>
-                        </li>
-                        <li><a href="blog-right-sidebar.html')}}"><i class="fas fa-angle-right"></i>Our Blog</a></li>
-                        <li><a href="javascript:;')}}"><i class="fas fa-angle-right"></i>Careers</a></li>
-                        <li><a href="terms-service.html')}}"><i class="fas fa-angle-right"></i>Terms of Service</a></li>
-                        <li><a href="privacy_policy.htm')}}l"><i class="fas fa-angle-right"></i>Privacy Policy</a></li>
-                        <li><a href="support.')}}"><i class="fas fa-angle-right"></i>Contact & Support</a></li>
+                        <li><a href="javascript:;">About Us</a></li>
+                        <li><a href="{{ route('guest.categories.index') }}">Category</a></li>
+                        <li><a href="javascript:;">Careers</a></li>
+                        <li><a href="{{ route('guest.terms') }}">Terms of Service</a></li>
+                        <li><a href="{{ route('guest.privacy.policy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ route('guest.contact') }}">Contact & Support</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="links">
                     <h4>News Letter</h4>
-                    <p>Wants to get latest updates! Sign up a for free, get started with store.</p>
+                    <p>Wants to get latest updates! Sign up for free and get started with store.</p>
                     <div class="input-box ps-rel">
                         <input type="text" placeholder="Your mail Address">
                         <button>Subscribe</button>
                     </div>
                     <div class="app-btn">
-                        <a href="{{ asset('website/javascript:;')}}">
-                            <img src="{{asset('website/images/index2/app-btn.png')}}" alt="app">
+                        <a href="javascript:;">
+                            <img src="{{ asset('website/images/index2/app-btn.png') }}" alt="app">
                         </a>
-                        <a href="{{ asset('website/javascript:;')}}">
-                            <img src="{{asset('website/images/index2/app-btn1.png')}}" alt="app">
+                        <a href="javascript:;">
+                            <img src="{{ asset('website/images/index2/app-btn1.png') }}" alt="app">
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="bottom-footer float_left">
         <div class="container">
             <div class="row">
@@ -534,7 +347,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                     <ul>
                         <li>
-                            <a href="{{ asset('website/javascript:;')}}">
+                            <a href="javascript:;">
                                        <span>
                                           <svg viewBox="0 0 25 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                                xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -551,7 +364,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ asset('website/javascript:;')}}">
+                            <a href="javascript:;">
                                        <span>
                                           <svg version="1.1" id="Capa_11" xmlns="http://www.w3.org/2000/svg"
                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -570,7 +383,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ asset('website/javascript:;')}}">
+                            <a href="javascript:;">
                                        <span>
                                           <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                                              <path
@@ -584,9 +397,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ asset('website/javascript:;')}}">
+                            <a href="javascript:;">
                                        <span>
-                                          <svg version="1.1" id="Layer_22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                          <svg version="1.1" id="Layer_22" xmlns="http://www.w3.org/2000/svg"
+                                               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                               viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                                               xml:space="preserve">
                                              <g>
                                                 <g>
                                                    <g>
@@ -603,58 +419,66 @@
                                              </g>
                                           </svg>
                                        </span>
-                                    </a>
-                                 </li>
-                              </ul>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <!-- footer section end -->
-            <!-- Side Panel -->
-            <script src="{{ asset('website/js/jquery-3.6.0.min.js')}}"></script>
-                                <script src="{{ asset('website/js/bootstrap.min.js')}}"></script>
-                                <script src="{{ asset('website/js/wow.js')}}"></script>
-                                <script src="{{ asset('website/js/jquery.magnific-popup.js')}}"></script>
-                                <script src="{{ asset('website/js/owl.carousel.min.js')}}"></script>
-                                <script src="{{ asset('website/js/contact_form.js')}}"></script>
-                                <script src="{{ asset('website/js/custom.js')}}"></script>
-                                <!-- custom js-->
-                                <!-- heart icon -->
-                                <script>
-                                    $('.heart a').click(function () {
-                                        if ($(this).hasClass('current')) {
-                                            $(this).removeClass('current');
-                                        } else {
-                                            $('.top_icon span.current').removeClass('current');
-                                            $(this).addClass('current');
-                                        }
-                                    });
-                                </script>
-                                <script>
-                                    $('#search_button').on("click", function (e) {
-                                        $('#search_open').slideToggle();
-                                        e.stopPropagation();
-                                    });
+        </div>
+    </div>
+</div>
+<!-- footer section end -->
+<!-- Side Panel -->
+<script src="{{ asset('website/js/jquery-3.6.0.min.js')}}"></script>
+<script src="{{ asset('website/js/bootstrap.min.js')}}"></script>
+<script src="{{ asset('website/js/wow.js')}}"></script>
+<script src="{{ asset('website/js/jquery.magnific-popup.js')}}"></script>
+<script src="{{ asset('website/js/owl.carousel.min.js')}}"></script>
+<script src="{{ asset('website/js/contact_form.js')}}"></script>
+<script src="{{ asset('website/js/custom.js')}}"></script>
 
-                                    $(document).on("click", function (e) {
-                                        if (!(e.target.closest('#search_open'))) {
-                                            $("#search_open").slideUp();
-                                        }
-                                    });
-                                </script>
-                                <script>
-                                    $('#search_button1').on("click", function (e) {
-                                        $('#search_open1').slideToggle();
-                                        e.stopPropagation();
-                                    });
+<!-- custom js -->
+<!-- heart icon -->
+<script>
+    $('.heart a').click(function () {
+        if ($(this).hasClass('current')) {
+            $(this).removeClass('current');
+        } else {
+            $('.top_icon span.current').removeClass('current');
+            $(this).addClass('current');
+        }
+    });
+</script>
 
-                                    $(document).on("click", function (e) {
-                                        if (!(e.target.closest('#search_open1'))) {
-                                            $("#search_open1").slideUp();
-                                        }
-                                    });
-                                </script>
+<script>
+    $('#search_button').on("click", function (e) {
+        $('#search_open').slideToggle();
+        e.stopPropagation();
+    });
+
+    $(document).on("click", function (e) {
+        if (!(e.target.closest('#search_open'))) {
+            $("#search_open").slideUp();
+        }
+    });
+</script>
+
+<script>
+    $('#search_button1').on("click", function (e) {
+        $('#search_open1').slideToggle();
+        e.stopPropagation();
+    });
+
+    $(document).on("click", function (e) {
+        if (!(e.target.closest('#search_open1'))) {
+            $("#search_open1").slideUp();
+        }
+    });
+</script>
+
+<!-- هنا نحط الـ stack -->
+@stack('scripts')
+
 </body>
 </html>
+
