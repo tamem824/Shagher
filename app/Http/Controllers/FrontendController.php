@@ -7,16 +7,13 @@ use App\Models\Comment;
 use App\Models\Job;
 use App\Models\Location;
 use App\Models\Post;
-use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View;
-use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        $categories = Category::where('name','!=','All Categories')->get();
+        $categories = $this->getFilteredCategories();
         $locations = Location::all();
         $posts = Post::with('comments')->get();
 
@@ -25,37 +22,27 @@ class FrontendController extends Controller
 
     public function jobIndex(Request $request)
     {
-        $jobs = Job::query();
-
-        if ($request->filled('search')) {
-            $jobs->where('title', 'like', '%' . $request->search . '%');
-        }
-
-        if ($request->filled('location')) {
-            $jobs->where('location_id', $request->location);
-        }
-
-        if ($request->filled('category')) {
-            $jobs->where('category_id', $request->category);
-        }
-
-        if ($request->filled('experience')) {
-            $jobs->where('experience_years', $request->experience);
-        }
-
-        $jobs = $jobs->latest()->paginate(3)->withQueryString();
+        $jobs = Job::query()
+            ->when($request->filled('search'), fn($q) => $q->where('title', 'like', '%' . $request->search . '%'))
+            ->when($request->filled('location'), fn($q) => $q->where('location_id', $request->location))
+            ->when($request->filled('category'), fn($q) => $q->where('category_id', $request->category))
+            ->when($request->filled('experience'), fn($q) => $q->where('experience_years', $request->experience))
+            ->latest()->paginate(3)
+            ->withQueryString();
 
         $locations = Location::pluck('name', 'id');
-        $categories = Category::where('name','!=','All Categories')->get();
+        $categories = $this->getFilteredCategories();
 
         return view('guest.result', compact('jobs', 'locations', 'categories'));
     }
+
     public function jobShow($id)
     {
-        $job=Job::findOrFail($id);
-        $category = $job->category();
-        $categories = Category::where('name','!=','All Categories')->get();
-        return view('guest.jobs.show',compact('job','categories','category'));
+        $job = Job::with('category')->findOrFail($id);
+        $category = $job->category;
+        $categories = $this->getFilteredCategories();
+
+        return view('guest.jobs.show', compact('job', 'categories', 'category'));
     }
 
     public function postShow($id)
@@ -79,11 +66,13 @@ class FrontendController extends Controller
 
     public function storePost(Request $request)
     {
+        $this->authorize('create', Post::class);
+
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'description' => 'required|string',
             'photo' => 'nullable|image',
-            'video_url' => 'nullable|string',
+            'video_url' => 'nullable|string|url',
         ]);
 
         if ($request->hasFile('photo')) {
@@ -97,50 +86,66 @@ class FrontendController extends Controller
 
         return redirect()->route('posts.index');
     }
+
     public function storeComment(Request $request, $postId)
     {
-        $content=$request->validate([
+        abort_unless(auth()->check(), 403);
+
+        $validated = $request->validate([
             'content' => 'required|string',
         ]);
 
-
         Comment::create([
-
+            'user_id' => auth()->id(),
             'post_id' => $postId,
-            'content' => $content['content'],
+            'content' => $validated['content'],
             'is_liked' => false,
         ]);
 
-        return redirect()->back();
+        return back();
     }
 
     public function storeReply(Request $request, $commentId)
     {
-        $request->validate([
+        abort_unless(auth()->check(), 403);
+
+        $validated = $request->validate([
             'replay' => 'required|string',
         ]);
 
+        $parent = Comment::findOrFail($commentId);
+
         Comment::create([
-            'post_id' => Comment::findOrFail($commentId)->post_id,
+            'user_id' => auth()->id(),
+            'post_id' => $parent->post_id,
             'comment_id' => $commentId,
             'content' => '',
-            'replay' => $request->replay,
+            'replay' => $validated['replay'],
             'is_liked' => false,
         ]);
 
-        return redirect()->back();
+        return back();
     }
+
     public function categoriesIndex()
     {
-        $categories = Category::where('name','!=','All Categories')->get();
+        $categories = $this->getFilteredCategories();
 
         return view('guest.categories.index', compact('categories'));
     }
+
     public function categoriesShow($id)
     {
-        $category=Category::findOrFail($id);
-        $categories = Category::where('name','!=','All Categories')->get();
-        $jobs=Job::with('category')->where('category_id','=',$id)->get();
-        return view('guest.categories.show',compact('category','jobs','categories'));
+        $category = Category::findOrFail($id);
+        $jobs = Job::with('category')->where('category_id', $id)->get();
+        $categories = $this->getFilteredCategories();
+
+        return view('guest.categories.show', compact('category', 'jobs', 'categories'));
+    }
+
+
+    private function getFilteredCategories()
+    {
+        return Category::where('name', '!=', 'All Categories')->get();
     }
 }

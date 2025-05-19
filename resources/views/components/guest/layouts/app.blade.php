@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-6">
                         <div class="index1-logo">
-                            <a href="{{ route('guest.home') }}">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ asset('website/images/Logo.png') }}" alt="logo" width="100px">
                             </a>
                         </div>
@@ -45,7 +45,7 @@
                             <ul class="navbar-nav">
                                 <!-- Home Section -->
                                 <li class="nav-item menu-click5 ps-rel">
-                                    <a class="nav-link" href="{{ route('guest.home') }}">
+                                    <a class="nav-link" href="{{ route('home') }}">
                                         Home
                                     </a>
                                 </li>
@@ -56,7 +56,7 @@
                                         Jobs
                                     </a>
                                     <ul class="dropdown-items menu-open3">
-                                        <li><a href="{{ route('guest.jobs') }}">Job Details</a></li>
+                                        <li><a href="{{ route('jobs') }}">Job Details</a></li>
                                     </ul>
                                 </li>
 
@@ -69,13 +69,13 @@
                                         @if($categories->isNotEmpty())
                                             @foreach($categories as $category)
                                                 <li>
-                                                    <a href="{{ route('guest.categories.show', $category->id) }}">
+                                                    <a href="{{ route('categories.show', $category->id) }}">
                                                         {{ $category->name }}
                                                     </a>
                                                 </li>
                                             @endforeach
                                             <li>
-                                                <a href="{{ route('guest.categories') }}"> All Categories</a>
+                                                <a href="{{ route('categories') }}"> All Categories</a>
                                             </li>
                                         @else
                                             <li>No categories available</li>
@@ -85,7 +85,7 @@
 
                                 <!-- Contact Us -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('guest.contact') }}">Contact Us</a>
+                                    <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                                 </li>
 
                                 <!-- Auth Links -->
@@ -169,7 +169,7 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-4">
                         <div class="mobile-logo">
-                            <a href="{{ route('guest.home') }}">
+                            <a href="{{ route('home') }}">
                                 <img src="{{ asset('website/images/logo.png') }}" alt="logo">
                             </a>
                         </div>
@@ -231,7 +231,7 @@
         </div>
         <div id="sidebar">
             <div class="sidebar_logo">
-                <a href="{{ route('guest.home') }}">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('website/images/logo.png') }}" alt="logo">
                 </a>
             </div>
@@ -239,10 +239,10 @@
             <div id='cssmenu'>
                 <ul class="float_left">
                     <li class="has-sub">
-                        <a href="{{ route('guest.home') }}">Home</a>
+                        <a href="{{ route('home') }}">Home</a>
                     </li>
                     <li class="has-sub">
-                        <a href="{{ route('guest.jobs') }}">Job</a>
+                        <a href="{{ route('jobs') }}">Job</a>
                     </li>
 
                     <li class="has-sub">
@@ -251,7 +251,7 @@
                             <li class="has-sub">
                                 <a class="sub-icon">All Categories</a>
                                 <ul class="m-sub-dropdown">
-                                    <li><a href="{{ route('guest.categories') }}">All Categories</a></li>
+                                    <li><a href="{{ route('categories') }}">All Categories</a></li>
                                 </ul>
                             </li>
                             <li class="has-sub">
@@ -259,7 +259,7 @@
                                 <ul class="m-sub-dropdown">
                                     @foreach($categories as $category)
                                         <li>
-                                            <a href="{{ route('guest.categories.show', $category->id) }}">
+                                            <a href="{{ route('categories.show', $category->id) }}">
                                                 {{ $category->name }}
                                             </a>
                                         </li>
@@ -270,7 +270,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ route('guest.contact') }}">Contact Us</a>
+                        <a href="{{ route('contact') }}">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -288,7 +288,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="sb-footer-section">
                     <div class="footer-logo">
-                        <a href="{{ route('guest.home') }}">
+                        <a href="{{ route('home') }}">
                             <img src="{{ asset('website/images/index2/logo.png') }}" alt="">
                         </a>
                     </div>
@@ -310,7 +310,7 @@
                 <div class="links">
                     <h4>Service</h4>
                     <ul>
-                        <li><a href="{{ route('guest.jobs.create') }}" {{-- Post a Job page --}}>
+                        <li><a href="{{ route('jobs.create') }}" {{-- Post a Job page --}}>
                                 Post a Job</a></li>
                     </ul>
                 </div>
@@ -320,11 +320,11 @@
                     <h4>Our Company</h4>
                     <ul>
                         <li><a href="javascript:;">About Us</a></li>
-                        <li><a href="{{ route('guest.categories') }}">Category</a></li>
+                        <li><a href="{{ route('categories') }}">Category</a></li>
                         <li><a href="javascript:;">Careers</a></li>
-                        <li><a href="{{ route('guest.terms') }}">Terms of Service</a></li>
-                        <li><a href="{{ route('guest.privacy-policy') }}">Privacy Policy</a></li>
-                        <li><a href="{{ route('guest.contact') }}">Contact & Support</a></li>
+                        <li><a href="{{ route('terms') }}">Terms of Service</a></li>
+                        <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ route('contact') }}">Contact & Support</a></li>
                     </ul>
                 </div>
             </div>

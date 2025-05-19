@@ -127,6 +127,6 @@ class CompanyController extends Controller
             'experience' => json_encode($validated['experience']),
         ]);
 
-        return redirect()->route('guest.jobs.show', $job->id)->with('success', 'Job updated successfully.');
+        return redirect()->route('jobs.show', $job->id)->with('success', 'Job updated successfully.');
     }
 }

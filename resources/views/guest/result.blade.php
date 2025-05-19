@@ -5,7 +5,7 @@
                 <h4>Available jobs</h4>
                 <ul>
                     <li>
-                        <a href="{{route('guest.home')}}">Home</a>
+                        <a href="{{route('home')}}">Home</a>
                     </li>
                     <li>Available jobs</li>
                 </ul>
@@ -29,7 +29,7 @@
                         <div class="ewr_search_infobox">
                             <div class="ewr_search_proj w-100">
                                 <h4>
-                                    <a href="{{ route('guest.jobs.show', $job->id) }}">
+                                    <a href="{{ route('jobs.show', $job->id) }}">
                                         {{ $job->title }}
                                     </a>
                                 </h4>
@@ -72,7 +72,7 @@
                                         </li>
                                     </ul>
 
-                                    <a href="{{ route('guest.jobs.show', $job->id) }}" class="ewr_btn_yellow">
+                                    <a href="{{ route('jobs.show', $job->id) }}" class="ewr_btn_yellow">
                                         <span>Bid Now</span>
                                     </a>
                                 </div>

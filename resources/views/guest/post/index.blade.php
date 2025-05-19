@@ -10,7 +10,7 @@
                                 <div class="card-body">
                                     <span class="badge bg-primary mb-2">{{ $post->created_at->format('d M Y') }}</span>
                                     <h4 class="card-title">
-                                        <a href="{{ route('guest.posts.show', $post->id) }}" class="text-decoration-none text-dark">
+                                        <a href="{{ route('posts.show', $post->id) }}" class="text-decoration-none text-dark">
                                             {{ $post->title }}
                                         </a>
                                     </h4>

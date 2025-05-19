@@ -14,12 +14,17 @@ class AdminAccessTest extends TestCase
 
     public function test_admin_can_access_dashboard()
     {
-        $admin = User::factory()->create(['user_type' => RuleEnums::Admin->value]);
+        $admin = User::factory()->create([
+            'user_type' => RuleEnums::Admin->value,
+        ]);
+
         $this->actingAs($admin);
 
-        $response = $this->get(route('admin.dashboard'));
+        $response = $this->get(route('admin.jobs'));
+
         $response->assertStatus(200);
     }
+
 
     public function test_non_admin_cannot_access_dashboard()
     {

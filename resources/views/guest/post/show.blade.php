@@ -59,7 +59,7 @@
                             @auth
                                 <button class="btn btn-sm btn-outline-primary reply-btn" data-comment-id="{{ $comment->id }}">Reply</button>
                                 <div class="reply-form mt-2" id="reply-form-{{ $comment->id }}" style="display: none;">
-                                    <form action="{{ route('guest.comments.reply', $comment->id) }}" method="POST">
+                                    <form action="{{ route('comments.reply', $comment->id) }}" method="POST">
                                         @csrf
                                         <div class="mb-2">
                                             <textarea name="content" class="form-control" rows="2" placeholder="Write your reply..." required></textarea>
@@ -77,7 +77,7 @@
                 <h4 class="mb-3">Add a Comment</h4>
 
                 @auth
-                    <form action="{{ route('guest.comments.store', $post->id) }}" method="POST">
+                    <form action="{{ route('comments.store', $post->id) }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <textarea name="content" class="form-control" rows="4" placeholder="Write your comment..." required></textarea>

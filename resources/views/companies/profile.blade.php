@@ -37,7 +37,7 @@
         {{-- Jobs --}}
         <div class="mb-4 d-flex justify-content-between align-items-center">
             <h4 class="mb-0">My Jobs ({{ $company->jobs->count() }})</h4>
-            <a href="{{ route('guest.jobs.create') }}" class="btn btn-pink btn-sm">
+            <a href="{{ route('jobs.create') }}" class="btn btn-pink btn-sm">
                 <i class="bi bi-plus-circle me-1"></i> Post New Job
             </a>
         </div>
@@ -52,7 +52,7 @@
                                 <p class="card-text text-muted">{{ Str::limit($job->description, 80) }}</p>
                                 <small class="text-muted d-block mb-3">Posted on {{ $job->created_at->format('M d, Y') }}</small>
                                 <div class="d-flex justify-content-between">
-                                    <a href="{{ route('guest.jobs.show', $job) }}" class="btn btn-sm btn-outline-pink">View</a>
+                                    <a href="{{ route('jobs.show', $job) }}" class="btn btn-sm btn-outline-pink">View</a>
                                     <a href="{{ route('company.jobs.edit', $job) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
         @else
             <div class="text-center text-muted py-5">
                 <p class="mb-3">You haven’t posted any jobs yet.</p>
-                <a href="{{ route('guest.jobs.create') }}" class="btn btn-pink">
+                <a href="{{ route('jobs.create') }}" class="btn btn-pink">
                     <i class="bi bi-plus-circle me-1"></i> Post Your First Job
                 </a>
             </div>

@@ -15,7 +15,7 @@
                                 <div class="category-overlay float_left">
                                     <h5>{{ $category->name }}</h5>
                                     <p>{{ $category->description }}</p>
-                                    <a href="{{route('guest.categories.show',$category->id)}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                    <a href="{{route('categories.show',$category->id)}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
