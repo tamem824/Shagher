@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\CheckUserStatus;
+use App\Http\Middleware\Company;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -12,8 +13,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->append(CheckUserStatus::class);
+        $middleware->append(
+            CheckUserStatus::class,
+            Company::class
+        );
     })
-    ->withExceptions(function (Exceptions $exceptions) {
+
+->withExceptions(function (Exceptions $exceptions) {
 
     })->create();

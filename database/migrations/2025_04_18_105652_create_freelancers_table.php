@@ -12,9 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('freelancer', function (Blueprint $table) {
+        Schema::create('freelancers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId(\App\Models\User::class)->constrained();
+            $table->foreignIdFor(\App\Models\User::class)->constrained();
             $table->foreignId('skills_id')->constrained('tags');
             $table->foreignId('career_level_id')->constrained('tags');
             $table->tinyInteger('experience');

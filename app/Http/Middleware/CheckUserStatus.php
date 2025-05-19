@@ -23,9 +23,9 @@ class CheckUserStatus
 
             if (
                 ($userType === RuleEnums::Company->value || $userType === RuleEnums::Freelance->value) &&
-                !$request->routeIs('guest.home.index')
+                !$request->routeIs('guest.home')
             ) {
-                return redirect()->route('guest.home.index');
+                return redirect()->route('guest.home');
             }
         }
 

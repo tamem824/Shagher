@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->tinyInteger('gender')->nullable();
-            $table->integer('phone_number')->nullable();
+            $table->string('phone_number')->nullable();
             $table->string('photo')->nullable();
             $table->string( 'address')->nullable();
             $table->tinyInteger('user_type')->default(0);

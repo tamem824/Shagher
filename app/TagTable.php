@@ -12,7 +12,7 @@ enum TagTable: int
     {
         return match ($this) {
             self::job => 'job',
-            self::freelance => 'free',
+            self::career_level => 'free',
 
         };
     }

@@ -47,6 +47,17 @@ class CompanyController extends Controller
 
         return redirect()->route('company.profile')->with('success', 'Profile updated.');
     }
+    public function createJob()
+    {
+
+        $categories = Category::where('name','!=','All Categories')->get();
+        $tag_careers = Tag::whereJsonContains('types', ['1'])->get();
+        $tag_employment_types = Tag::whereJsonContains('types', ['2'])->get();
+        $tags = Tag::whereJsonContains('types', ['0'])->get();
+
+        return view('companies.jobsCreate', compact('categories','tag_careers','tag_employment_types','tags'));
+    }
+
     public function editJob($id)
     {
         $job = Job::findOrFail($id);
@@ -116,6 +127,6 @@ class CompanyController extends Controller
             'experience' => json_encode($validated['experience']),
         ]);
 
-        return redirect()->route('jobs.show', $job->id)->with('success', 'Job updated successfully.');
+        return redirect()->route('guest.jobs.show', $job->id)->with('success', 'Job updated successfully.');
     }
 }

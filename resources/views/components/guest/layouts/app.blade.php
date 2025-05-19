@@ -1,6 +1,5 @@
 @props(['categories'])
 <html lang="en">
-
 <head>
     <meta charset="utf-8"/>
     <title>Shager</title>
@@ -20,7 +19,6 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('website/images/fav-icon.png') }}" type="image/png"/>
 </head>
-
 <body>
 <div id="preloader">
     <div id="status">
@@ -37,7 +35,7 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-6">
                         <div class="index1-logo">
-                            <a href="{{ route('guest.home.index') }}">
+                            <a href="{{ route('guest.home') }}">
                                 <img src="{{ asset('website/images/Logo.png') }}" alt="logo" width="100px">
                             </a>
                         </div>
@@ -47,7 +45,7 @@
                             <ul class="navbar-nav">
                                 <!-- Home Section -->
                                 <li class="nav-item menu-click5 ps-rel">
-                                    <a class="nav-link" href="{{ route('guest.home.index') }}">
+                                    <a class="nav-link" href="{{ route('guest.home') }}">
                                         Home
                                     </a>
                                 </li>
@@ -58,7 +56,7 @@
                                         Jobs
                                     </a>
                                     <ul class="dropdown-items menu-open3">
-                                        <li><a href="{{ route('guest.jobs.index') }}">Job Details</a></li>
+                                        <li><a href="{{ route('guest.jobs') }}">Job Details</a></li>
                                     </ul>
                                 </li>
 
@@ -77,7 +75,7 @@
                                                 </li>
                                             @endforeach
                                             <li>
-                                                <a href="{{ route('guest.categories.index') }}"> All Categories</a>
+                                                <a href="{{ route('guest.categories') }}"> All Categories</a>
                                             </li>
                                         @else
                                             <li>No categories available</li>
@@ -118,35 +116,48 @@
                                 @if(optional(auth()->user()->company)->is_approved)
                                     <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons">
                                         <li class="post-drop">
-                                            <a class="post-btn" href="javascript:;" aria-label="Post a Job">
-                                                <span>Post Now &nbsp;</span>
+                                            <a href="{{ route('company.jobs.create') }}" class="post-btn">
+                                                <i class="bi bi-plus-circle me-1"></i> Post a Job
                                             </a>
-                                            <div class="post-page-wrapper">
-                                                <a href="{{ route('guest.jobs.create') }}">Post a Job</a>
-                                                <a href="{{ route('company.profile') }}" class="btn btn-outline-primary btn-sm">
-                                                    <i class="bi bi-person-circle me-1"></i> Company Profile
-                                                </a>
-
-                                            </div>
                                         </li>
+                                        <li class="post-drop">
+                                            <a href="{{ route('company.profile') }}" class="post-btn">
+                                                <i class="bi bi-person-circle me-1"></i> Company Profile
+                                            </a>
+                                        </li>
+
+
                                     </ul>
                                 @else
-                                    <div class="alert alert-warning alert-dismissible fade show d-flex align-items-center mt-3" role="alert">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
-                                             width="20" height="20" fill="currentColor" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                                    <div
+                                        class="alert alert-warning alert-dismissible fade show d-flex align-items-center mt-3"
+                                        role="alert">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                             class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"
+                                             width="20" height="20" fill="currentColor" viewBox="0 0 16 16" role="img"
+                                             aria-label="Warning:">
                                             <path
                                                 d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.707c.89 0 1.438-.99.982-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1-2.002 0 1 1 0 0 1 2.002 0z"/>
                                         </svg>
                                         <div>
-                                            Your company is not yet approved to post jobs. Please wait for admin approval.
+                                            Your company is not yet approved to post jobs. Please wait for admin
+                                            approval.
                                         </div>
-                                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+                                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="alert"
+                                                aria-label="Close"></button>
                                     </div>
                                 @endif
                             @endif
+
+                            @if(auth()->user()->user_type === \App\RuleEnums::Freelance->value)
+                                <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none social-media-icons">
+                                    <li class="post-drop">
+                                        <a href="{{ route('user.dashboard') }}" class="post-btn">
+                                            <i class="bi bi-plus-circle me-1"></i> My Profile
+                                        </a>
+                                    </li>
+                            @endif
                         @endauth
-
-
                     </div>
                 </div>
             </div>
@@ -158,8 +169,8 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-4 col-4">
                         <div class="mobile-logo">
-                            <a href="{{ route('guest.home.index') }}">
-                                <img src="{{ asset('website/images/index1-logo.png') }}" alt="logo">
+                            <a href="{{ route('guest.home') }}">
+                                <img src="{{ asset('website/images/logo.png') }}" alt="logo">
                             </a>
                         </div>
                     </div>
@@ -220,18 +231,18 @@
         </div>
         <div id="sidebar">
             <div class="sidebar_logo">
-                <a href="{{ route('guest.home.index') }}">
-                    <img src="{{ asset('website/images/index1-logo.png') }}" alt="logo">
+                <a href="{{ route('guest.home') }}">
+                    <img src="{{ asset('website/images/logo.png') }}" alt="logo">
                 </a>
             </div>
             <div id="toggle_close">&times;</div>
             <div id='cssmenu'>
                 <ul class="float_left">
                     <li class="has-sub">
-                        <a href="{{ route('guest.home.index') }}">Home</a>
+                        <a href="{{ route('guest.home') }}">Home</a>
                     </li>
                     <li class="has-sub">
-                        <a href="{{ route('guest.jobs.index') }}">Job</a>
+                        <a href="{{ route('guest.jobs') }}">Job</a>
                     </li>
 
                     <li class="has-sub">
@@ -240,7 +251,7 @@
                             <li class="has-sub">
                                 <a class="sub-icon">All Categories</a>
                                 <ul class="m-sub-dropdown">
-                                    <li><a href="{{ route('guest.categories.index') }}">All Categories</a></li>
+                                    <li><a href="{{ route('guest.categories') }}">All Categories</a></li>
                                 </ul>
                             </li>
                             <li class="has-sub">
@@ -277,7 +288,7 @@
             <div class="col-lg-3 col-md-6 col-sm-12 col-12">
                 <div class="sb-footer-section">
                     <div class="footer-logo">
-                        <a href="{{ route('guest.home.index') }}">
+                        <a href="{{ route('guest.home') }}">
                             <img src="{{ asset('website/images/index2/logo.png') }}" alt="">
                         </a>
                     </div>
@@ -309,10 +320,10 @@
                     <h4>Our Company</h4>
                     <ul>
                         <li><a href="javascript:;">About Us</a></li>
-                        <li><a href="{{ route('guest.categories.index') }}">Category</a></li>
+                        <li><a href="{{ route('guest.categories') }}">Category</a></li>
                         <li><a href="javascript:;">Careers</a></li>
                         <li><a href="{{ route('guest.terms') }}">Terms of Service</a></li>
-                        <li><a href="{{ route('guest.privacy.policy') }}">Privacy Policy</a></li>
+                        <li><a href="{{ route('guest.privacy-policy') }}">Privacy Policy</a></li>
                         <li><a href="{{ route('guest.contact') }}">Contact & Support</a></li>
                     </ul>
                 </div>
@@ -474,6 +485,8 @@
             $("#search_open1").slideUp();
         }
     });
+
+
 </script>
 
 <!-- هنا نحط الـ stack -->

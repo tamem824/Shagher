@@ -5,7 +5,7 @@
                 <h4>Available jobs</h4>
                 <ul>
                     <li>
-                        <a href="{{route('guest.home.index')}}">Home</a>
+                        <a href="{{route('guest.home')}}">Home</a>
                     </li>
                     <li>Available jobs</li>
                 </ul>
