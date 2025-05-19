@@ -75,7 +75,7 @@ Route::prefix('guest')->name('guest.')->group(function (){
 
 
 
-Route::prefix('company')->name('company.')->middleware(['auth',Company::class])->group(function (){
+Route::prefix('company')->name('company.')->middleware(['auth',CheckUserStatus::class])->group(function (){
     Route::get('profile',[CompanyController::class,'profile'])->name('profile');
     Route::get('profile.edit',[CompanyController::class,'edit'])->name('profile.edit');
     Route::put('profile.update', [CompanyController::class, 'update'])->name('profile.update');

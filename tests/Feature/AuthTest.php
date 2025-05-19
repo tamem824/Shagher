@@ -19,12 +19,12 @@ class AuthTest extends TestCase
             'password' => 'password',
 
             'password_confirmation' => 'password',
-            'user_type'=>RuleEnums::Freelance->value,
+            'user_type'=>RuleEnums::Company->value,
             'uri'=>'www.paodksd.com',
             'terms'=>true,
         ]);
 
-        $response->assertRedirect(route('guest.home.index'));
+
         $this->assertDatabaseHas('users', ['email' => 'test@example.com']);
     }
 

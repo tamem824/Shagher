@@ -15,21 +15,36 @@ class CheckUserStatus
     public function handle(Request $request, Closure $next): Response
     {
         if (auth()->check()) {
-            $userType = auth()->user()->user_type;
+            $user = auth()->user();
+            $route = $request->route();
 
-            if ($userType === RuleEnums::Admin->value && !$request->routeIs('admin.*')) {
-                return redirect()->route('admin.dashboard');
-            }
+            $redirectRoutes = [
+                RuleEnums::Admin->value => [
+                    'allowed' => 'admin.*',
+                    'redirect' => 'admin.dashboard',
+                ],
+                RuleEnums::Company->value => [
+                    'allowed' => 'company.*',
+                    'redirect' => 'company.profile',
+                ],
+                RuleEnums::Freelance->value => [
+                    'allowed' => 'guest.home',
+                    'redirect' => 'guest.home',
+                ],
+            ];
 
-            if (
-                ($userType === RuleEnums::Company->value || $userType === RuleEnums::Freelance->value) &&
-                !$request->routeIs('guest.home')
-            ) {
-                return redirect()->route('guest.home');
+            $userType = $user->user_type;
+
+            if (isset($redirectRoutes[$userType])) {
+                $allowed = $redirectRoutes[$userType]['allowed'];
+                $redirect = $redirectRoutes[$userType]['redirect'];
+
+                if (!$request->routeIs($allowed)) {
+                    return redirect()->route($redirect);
+                }
             }
         }
 
         return $next($request);
     }
-
 }
