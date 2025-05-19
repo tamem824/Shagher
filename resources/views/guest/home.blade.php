@@ -10,7 +10,7 @@
                             verified, up-to-date job listings directly from the employers.</p>
                     </div>
                     <div class="slider-form mt-4 float_left">
-                        <form method="GET" action="{{ route('guest.jobs.index') }}">
+                        <form method="GET" action="{{ route('guest.jobs') }}">
                             <div class="form-group mb-4 row">
                                 <div class="col-md-6 col-12 field-icon">
                                     <input type="text" name="search" placeholder="Search" class="form-control" value="{{ request('search') }}">
