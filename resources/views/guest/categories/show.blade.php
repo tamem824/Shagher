@@ -12,7 +12,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ $job->title }}</h5>
                                 <p class="card-text">{{ Str::limit($job->description, 100) }}</p>
-                                <a href="{{ route('guest.jobs.show', $job->id) }}" class="btn btn-primary btn-sm">View Job</a>
+                                <a href="{{ route('jobs.show', $job->id) }}" class="btn btn-primary btn-sm">View Job</a>
                             </div>
                         </div>
                     </div>

@@ -77,7 +77,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
         Auth::login($user);
 
-        return redirect(route('guest.home', absolute: false));
+        return redirect(route('home', absolute: false));
     }
 
     public function storeC(Request $request): RedirectResponse
@@ -119,7 +119,7 @@ class RegisteredUserController extends Controller
 
             Auth::login($user);
 
-            return redirect()->route('guest.home')->with('success', 'Company registered successfully.');
+            return redirect()->route('home')->with('success', 'Company registered successfully.');
 
 
         } catch (\Exception $e) {

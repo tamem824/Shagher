@@ -11,7 +11,7 @@
                                     <div class="vedio-text">
                                         <span>{{ $post->created_at->format('d M Y') }}</span>
                                         <h4>
-                                            <a href="{{ route('guest.posts.show', $post->id) }}">{{ $post->title }}</a>
+                                            <a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a>
                                         </h4>
                                         <ul>
                                             <li>

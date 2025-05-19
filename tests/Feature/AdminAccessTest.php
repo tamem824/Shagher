@@ -20,9 +20,7 @@ class AdminAccessTest extends TestCase
 
         $this->actingAs($admin);
 
-        $response = $this->get(route('admin.dashboard'));
-        dd($response->headers->get('Location'));
-
+        $response = $this->get(route('admin.jobs'));
 
         $response->assertStatus(200);
     }

@@ -23,7 +23,7 @@ class JobPostingTest extends TestCase
     {
         $job = Job::factory()->create();
 
-        $response = $this->get(route('guest.jobs'));
+        $response = $this->get(route('jobs'));
 
         $response->assertStatus(200);
         $response->assertSee($job->title);

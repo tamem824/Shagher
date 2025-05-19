@@ -10,7 +10,7 @@
                             verified, up-to-date job listings directly from the employers.</p>
                     </div>
                     <div class="slider-form mt-4 float_left">
-                        <form method="GET" action="{{ route('guest.jobs') }}">
+                        <form method="GET" action="{{ route('jobs') }}">
                             <div class="form-group mb-4 row">
                                 <div class="col-md-6 col-12 field-icon">
                                     <input type="text" name="search" placeholder="Search" class="form-control" value="{{ request('search') }}">
@@ -108,7 +108,7 @@
                                 <div class="category-overlay float_left">
                                     <h5>{{ $category->name }}</h5>
                                     <p>{{ $category->description }}</p>
-                                    <a href="{{route('guest.categories.show',$category->id)}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                                    <a href="{{route('categories.show',$category->id)}}">Explore <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -364,7 +364,7 @@
 
                                     <span>{{ $post->created_at->format('d M Y') }}</span>
                                     <h4>
-                                        <a href="{{ route('guest.posts.show', $post->id) }}">{{ $post->title }}</a>
+                                        <a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a>
                                     </h4>
                                     <ul>
                                         <li>
@@ -396,7 +396,7 @@
                 </div>
 
                 <div class="center-btn float_left mt-5">
-                    <a href="{{ route('guest.posts.index') }}">
+                    <a href="{{ route('posts.index') }}">
                         <span>Read More</span>
                     </a>
                 </div>
